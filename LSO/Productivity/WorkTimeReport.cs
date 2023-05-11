@@ -1,14 +1,28 @@
 namespace LSO.Productivity;
 
-public class WorkTimeReport         // Учёт рабочего времени на день
+/// <summary>
+/// Учёт рабочего времени бойцов отряда в отдельный рабочий день
+/// </summary>
+public class WorkTimeReport
 {
-    public DateTime Date { get; set; }                                 // Учётный день (11.05.2023)
-    public Squad Squad { get; set; }                                   // Отряд (ССО "Агонь")
-    public List<WorkedHours> WorkedHoursPerSquadMember { get; set; }   // Список бойцов для учёта времени
+    /// <summary>
+    /// Учётный день (11.05.2023)
+    /// </summary>
+    public DateTime Date { get; set; }
+    /// <summary>
+    /// Отряд (ССО "Агонь")
+    /// </summary>
+    public Squad Squad { get; set; }
+    /// <summary>
+    /// Список бойцов для учёта времени
+    /// </summary>
+    public List<WorkedHours> WorkedHoursPerSquadMember { get; set; }
 
-    public float GetTotalWorkedHoursForSquad()   // Метод для получения суммарного рабочего времени для отряда
+    /// <summary>
+    /// Метод для получения суммарного рабочего времени для отряда
+    /// </summary>
+    public float GetTotalWorkedHoursForSquad()
     {
-        // LINQ
         return WorkedHoursPerSquadMember.Where(workedHours => workedHours.WorkerActivityStatus == WorkerActivityStatus.DidWork).Sum(workedHours => workedHours.WorkHours);
     }
 }

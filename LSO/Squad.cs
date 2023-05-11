@@ -1,10 +1,25 @@
 ﻿namespace LSO;
 
-public class Squad              // Линейный студенческий отряд
+/// <summary>
+/// Линейный студенческий отряд
+/// </summary>
+public class Squad
 {
-    public string Name { get; set; }                 // Название ЛСО (ССО "Агонь")
-    public string Region { get; set; }               // Регион, в котором находится штаб (г. Москва)
-    public string VKUrl { get; set; }                // Ссылка на ВК отряда (https://vk.com/ssoagon)
-    public Institution Institution { get; set; }     // Учебное заведение базирования (ФГБОУ ВО МАДИ)
+    /// <summary>
+    /// Название ЛСО (ССО "Агонь")
+    /// </summary>
+    public string Name { get; set; }
+    /// <summary>
+    /// Регион, в котором находится штаб (г. Москва)
+    /// </summary>
+    public string Region { get; set; }
+    /// <summary>
+    /// Ссылка на ВК отряда (https://vk.com/ssoagon)
+    /// </summary>
+    public string VKUrl { get; set; }
+    /// <summary>
+    /// Учебное заведение базирования (ФГБОУ ВО МАДИ)
+    /// </summary>
+    public Institution Institution { get; set; }
 }
 

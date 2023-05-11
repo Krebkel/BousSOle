@@ -1,10 +1,27 @@
 namespace LSO.Productivity;
-
-public enum WorkerActivityStatus    // Статус
+/// <summary>
+/// Статус отдельного работника в рабочий день
+/// </summary>
+public enum WorkerActivityStatus 
 {
-    DidWork,                        // Работал                  (Р)
-    DayOff,                         // Выходной                 (В)
-    Sick,                           // Невыход по болезни       (Б)
-    Furlough,                       // Отпуск без содержания    (БС)
-    Truancy                         // Прогул                   (Н)
+    /// <summary>
+    /// Работал (Р)
+    /// </summary>
+    DidWork,
+    /// <summary>
+    /// Выходной (В)
+    /// </summary>
+    DayOff, 
+    /// <summary>
+    /// Невыход по болезни (Б)
+    /// </summary>
+    Sick,
+    /// <summary>
+    /// Отпуск без содержания (БС)
+    /// </summary>
+    UnpaidLeave,
+    /// <summary>
+    /// Прогул (Н)
+    /// </summary>
+    Absence
 }

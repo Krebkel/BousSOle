@@ -1,10 +1,28 @@
 namespace LSO;
 
-public class SquadMember        // Боец линейного студенческого отряда
+/// <summary>
+/// Боец линейного студенческого отряда
+/// </summary>
+public class SquadMember
 {
-    public string Name { get; set; }            // ФИО бойца (Иванов Иван Иванович)
-    public string PhoneNumber { get; set; }     // Телефон бойца (+7 (999) 999-99-99)
-    public int YearEnlisted { get; set; }       // Год набора (2023)
-    public bool IsActive { get; set; }          // Участие в действующем составе (Да)
-    public Squad Squad { get; set; }            // Отряд (ССО "Агонь")
+    /// <summary>
+    /// ФИО бойца (Иванов Иван Иванович)
+    /// </summary>
+    public string Name { get; set; }
+    /// <summary>
+    /// Телефон бойца (+7 (999) 999-99-99)
+    /// </summary>
+    public string PhoneNumber { get; set; }
+    /// <summary>
+    /// Год набора (2023)
+    /// </summary>
+    public int YearEnlisted { get; set; }
+    /// <summary>
+    /// Участие в действующем составе (True)
+    /// </summary>
+    public bool IsActive { get; set; }
+    /// <summary>
+    /// Отряд (ССО "Агонь")
+    /// </summary>
+    public Squad Squad { get; set; }
 }

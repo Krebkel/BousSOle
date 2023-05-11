@@ -1,10 +1,28 @@
 namespace LSO;
 
-public class Institution         // Учебное заведение
+/// <summary>
+/// Учебное заведение
+/// </summary>
+public class Institution
 {
-    public string ShortName { get; set; }           // Краткое название (ФГБОУ ВО МГТУ "СТАНКИН")
-    public string FullName { get; set; }            // Полное название  (Федеральное государственное....)
-    public string AdministratorTitle { get; set; }  // Должность руководителя (Ректор)
-    public string AdministratorName { get; set; }   // ФИО руководителя (Серебренный Владимир Валерьевич)
-    public string StructWebsite { get; set; }       // Сайт структуры учебного заведения (https://stankin.ru/sveden/employees)
+    /// <summary>
+    /// Краткое название (ФГБОУ ВО МГТУ "СТАНКИН")
+    /// </summary>
+    public string ShortName { get; set; }
+    /// <summary>
+    /// Полное название  (Федеральное государственное....)
+    /// </summary>
+    public string FullName { get; set; }
+    /// <summary>
+    /// Должность руководителя (Ректор)
+    /// </summary>
+    public string AdministratorTitle { get; set; }
+    /// <summary>
+    /// ФИО руководителя (Серебренный Владимир Валерьевич)
+    /// </summary>
+    public string AdministratorName { get; set; }
+    /// <summary>
+    /// Сайт структуры учебного заведения (https://stankin.ru/sveden/employees)
+    /// </summary>
+    public string StructWebsite { get; set; }
 }
