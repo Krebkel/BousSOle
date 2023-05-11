@@ -1,4 +1,4 @@
-namespace LSO;
+namespace LSO.Productivity;
 
 public class WorkedHours            // Учёт рабочего времени для человека
 {

@@ -1,4 +1,4 @@
-namespace LSO;
+namespace LSO.Productivity;
 
 public enum WorkerActivityStatus    // Статус
 {
