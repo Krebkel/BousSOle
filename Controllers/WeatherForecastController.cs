@@ -29,4 +29,10 @@ public class WeatherForecastController : ControllerBase
             })
             .ToArray();
     }
+    
+    [HttpGet("SomeMethod")]
+    public void DoSomething()
+    {
+        var someVariable = Enumerable.Range(1, 10);
+    }
 }
