@@ -31,14 +31,12 @@ public class ElementNorm
     public float BaseNorm { get; set; }
     
     /// <summary>
+    /// Зависит ли расчёт по этой статье от дистанции и каким образом
+    /// </summary>
+    public NormType NormType { get; set; }
+    
+    /// <summary>
     /// Норма времени на каждые следующие 10 метров ЕСЛИ норма зависит от дистанции
     /// </summary>
     public float? DistanceNorm { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public NormType NormType { get; set; }
-
-
 }
