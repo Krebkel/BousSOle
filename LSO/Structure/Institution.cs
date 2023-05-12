@@ -1,4 +1,4 @@
-namespace LSO;
+namespace LSO.Structure;
 
 /// <summary>
 /// Учебное заведение
