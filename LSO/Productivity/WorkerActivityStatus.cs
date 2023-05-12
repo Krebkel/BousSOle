@@ -1,4 +1,5 @@
 namespace LSO.Productivity;
+
 /// <summary>
 /// Статус отдельного работника в рабочий день
 /// </summary>
@@ -11,15 +12,18 @@ public enum WorkerActivityStatus
     /// <summary>
     /// Выходной (В)
     /// </summary>
-    DayOff, 
+    
+    DayOff,
     /// <summary>
     /// Невыход по болезни (Б)
     /// </summary>
     Sick,
+    
     /// <summary>
     /// Отпуск без содержания (БС)
     /// </summary>
     UnpaidLeave,
+    
     /// <summary>
     /// Прогул (Н)
     /// </summary>

@@ -6,14 +6,6 @@ namespace LSO.Productivity;
 public class WorkTimeReport
 {
     /// <summary>
-    /// Учётный день (11.05.2023)
-    /// </summary>
-    public DateTime Date { get; set; }
-    /// <summary>
-    /// Отряд (ССО "Агонь")
-    /// </summary>
-    public Squad Squad { get; set; }
-    /// <summary>
     /// Список бойцов для учёта времени
     /// </summary>
     public List<WorkedHours> WorkedHoursPerSquadMember { get; set; }
@@ -25,4 +17,5 @@ public class WorkTimeReport
     {
         return WorkedHoursPerSquadMember.Where(workedHours => workedHours.WorkerActivityStatus == WorkerActivityStatus.DidWork).Sum(workedHours => workedHours.WorkHours);
     }
+    
 }
