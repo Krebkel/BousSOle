@@ -9,11 +9,12 @@ public enum WorkerActivityStatus
     /// Работал (Р)
     /// </summary>
     DidWork,
+    
     /// <summary>
     /// Выходной (В)
     /// </summary>
-    
     DayOff,
+    
     /// <summary>
     /// Невыход по болезни (Б)
     /// </summary>
