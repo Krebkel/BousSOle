@@ -5,7 +5,6 @@ namespace LSO.Productivity;
 /// </summary>
 public class WorkHoursReport
 {
-    
     /// <summary>
     /// Учётный день (11.05.2023)
     /// </summary>
