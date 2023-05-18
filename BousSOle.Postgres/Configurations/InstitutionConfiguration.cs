@@ -1,6 +1,6 @@
+using LSO.StructureContracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using LSO.Structure;
 
 namespace BousSOle.Postgres.Configurations;
 

@@ -1,4 +1,4 @@
-namespace LSO.Productivity;
+namespace LSO.ProductivityContracts;
 
 /// <summary>
 /// Тип нормы по зависимости от дистанции

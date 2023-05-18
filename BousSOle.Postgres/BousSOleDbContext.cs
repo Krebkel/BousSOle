@@ -1,6 +1,6 @@
+using LSO.ProductivityContracts;
+using LSO.StructureContracts;
 using Microsoft.EntityFrameworkCore;
-using LSO.Productivity;
-using LSO.Structure;
 
 namespace BousSOle.Postgres;
 

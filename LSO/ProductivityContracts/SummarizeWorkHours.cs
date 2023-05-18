@@ -1,4 +1,4 @@
-namespace LSO.Productivity;
+namespace LSO.ProductivityContracts;
 
 /// <summary>
 /// Учёт рабочего времени бойцов отряда в отдельный рабочий день

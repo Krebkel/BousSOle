@@ -1,4 +1,4 @@
-namespace LSO.Productivity;
+namespace LSO.ProductivityContracts;
 
 /// <summary>
 /// Сметные нормативные документы (ЕНиР, ГЭСН, ФЕР, ...)

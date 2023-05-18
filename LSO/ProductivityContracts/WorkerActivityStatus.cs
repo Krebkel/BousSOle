@@ -1,4 +1,4 @@
-namespace LSO.Productivity;
+namespace LSO.ProductivityContracts;
 
 /// <summary>
 /// Статус отдельного работника в рабочий день

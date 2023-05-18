@@ -1,4 +1,4 @@
-﻿namespace LSO.Structure;
+﻿namespace LSO.StructureContracts;
 
 /// <summary>
 /// Линейный студенческий отряд
