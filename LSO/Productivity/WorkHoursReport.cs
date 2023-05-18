@@ -25,5 +25,10 @@ public class WorkHoursReport
     /// <summary>
     /// Кол-во часов выработки (10)
     /// </summary>
-    public float WorkHours { get; set; }                            
+    public float WorkHours { get; set; }  
+    
+    /// <summary>
+    /// UID
+    /// </summary>
+    public int Id { get;set; }                          
 }

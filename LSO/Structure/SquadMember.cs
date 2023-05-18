@@ -31,7 +31,17 @@ public class SquadMember
     public bool IsActive { get; set; }
     
     /// <summary>
+    /// UID отряда
+    /// </summary>
+    public int SquadID { get; set; }
+    
+    /// <summary>
     /// Отряд (ССО "Агонь")
     /// </summary>
     public Squad Squad { get; set; }
+    
+    /// <summary>
+    /// UID бойца отряда
+    /// </summary>
+    public int Id { get;set; }
 }

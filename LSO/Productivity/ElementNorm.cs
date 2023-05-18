@@ -39,4 +39,9 @@ public class ElementNorm
     /// Норма времени на каждые следующие 10 метров ЕСЛИ норма зависит от дистанции
     /// </summary>
     public float? DistanceNorm { get; set; }
+    
+    /// <summary>
+    /// UID
+    /// </summary>
+    public int Id { get;set; }
 }

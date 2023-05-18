@@ -21,8 +21,18 @@ public class Squad
     public string VKUrl { get; set; }
     
     /// <summary>
+    /// UID учебного заведения
+    /// </summary>
+    public int InstitutionID { get; set; }
+    
+    /// <summary>
     /// Учебное заведение базирования (ФГБОУ ВО МАДИ)
     /// </summary>
     public Institution Institution { get; set; }
+    
+    /// <summary>
+    /// UID отряда
+    /// </summary>
+    public int Id { get;set; }
 }
 
