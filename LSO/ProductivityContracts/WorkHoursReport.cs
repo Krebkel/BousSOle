@@ -13,6 +13,11 @@ public class WorkHoursReport
     public DateTime Date { get; set; }
     
     /// <summary>
+    /// UID бойца
+    /// </summary>
+    public int SquadMemberID { get; set; }
+    
+    /// <summary>
     /// Боец отряда (Иванов Иван Иванович)
     /// </summary>
     public SquadMember SquadMember { get; set; }

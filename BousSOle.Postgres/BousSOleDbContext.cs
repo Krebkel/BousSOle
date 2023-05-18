@@ -50,4 +50,9 @@ public class BousSOleDbContext : DbContext
     /// Набор сущностей рабочих часов по дням
     /// </summary>
     public DbSet<WorkHoursReport> WorkHoursReports { get; set; }
+    
+    /// <summary>
+    /// Набор сущностей для учёта выполненных работ отрядом по дням
+    /// </summary>
+    public DbSet<WorkPerformedReport> WorkPerformedReports { get; set; }
 }
