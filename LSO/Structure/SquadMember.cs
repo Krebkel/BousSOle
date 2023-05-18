@@ -1,4 +1,4 @@
-namespace LSO;
+namespace LSO.Structure;
 
 /// <summary>
 /// Боец линейного студенческого отряда
@@ -9,6 +9,11 @@ public class SquadMember
     /// ФИО бойца (Иванов Иван Иванович)
     /// </summary>
     public string Name { get; set; }
+    
+    /// <summary>
+    /// Должность в отряде
+    /// </summary>
+    public MemberRank MemberRank { get; set; }
     
     /// <summary>
     /// Телефон бойца (+7 (999) 999-99-99)

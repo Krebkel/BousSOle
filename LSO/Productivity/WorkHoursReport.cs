@@ -1,3 +1,5 @@
+using LSO.Structure;
+    
 namespace LSO.Productivity;
 
 /// <summary>
