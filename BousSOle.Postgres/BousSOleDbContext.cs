@@ -55,4 +55,9 @@ public class BousSOleDbContext : DbContext
     /// Набор сущностей для учёта выполненных работ отрядом по дням
     /// </summary>
     public DbSet<WorkPerformedReport> WorkPerformedReports { get; set; }
+    
+    /// <summary>
+    /// Набор сущностей для учёта должностей бойца по годам
+    /// </summary>
+    public DbSet<MemberRankHistory> MemberRankHistories { get; set; }
 }

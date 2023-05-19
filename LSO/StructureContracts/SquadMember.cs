@@ -30,6 +30,11 @@ public class SquadMember
     /// </summary>
     public bool IsActive { get; set; }
     
+     /// <summary>
+     /// История должностей бойца отряда
+     /// </summary>
+     public List<MemberRankHistory> MemberRankHistory { get; set; }
+     
     /// <summary>
     /// UID отряда
     /// </summary>
