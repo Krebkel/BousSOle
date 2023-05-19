@@ -31,6 +31,11 @@ public class Squad
     public Institution Institution { get; set; }
     
     /// <summary>
+    /// Направление отряда
+    /// </summary>
+    public SquadType SquadType { get; set; }
+    
+    /// <summary>
     /// UID отряда
     /// </summary>
     public int Id { get;set; }
