@@ -44,5 +44,4 @@ public enum SquadType
     /// Трудовой отряд подростков (ТОП)
     /// </summary>
     TOP
-
 }
