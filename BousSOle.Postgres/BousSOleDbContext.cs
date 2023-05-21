@@ -57,7 +57,7 @@ public class BousSOleDbContext : DbContext
     public DbSet<WorkPerformedReport> WorkPerformedReports { get; set; }
     
     /// <summary>
-    /// Набор сущностей для учёта должностей бойца по годам
+    /// Набор сущностей для учёта физ.лиц
     /// </summary>
-    public DbSet<MemberRankHistory> MemberRankHistories { get; set; }
+    public DbSet<Person> Persons { get; set; }
 }

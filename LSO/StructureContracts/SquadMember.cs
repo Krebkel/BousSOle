@@ -6,9 +6,9 @@ namespace LSO.StructureContracts;
 public class SquadMember
 {
     /// <summary>
-    /// ФИО бойца (Иванов Иван Иванович)
+    /// Физическое лицо
     /// </summary>
-    public string Name { get; set; }
+    public Person Person { get; set; }
     
     /// <summary>
     /// Должность в отряде
@@ -16,25 +16,15 @@ public class SquadMember
     public MemberRank MemberRank { get; set; }
     
     /// <summary>
-    /// Телефон бойца (+7 (999) 999-99-99)
-    /// </summary>
-    public string PhoneNumber { get; set; }
-    
-    /// <summary>
-    /// Год набора (2023)
+    /// Год набора
     /// </summary>
     public int YearEnlisted { get; set; }
     
     /// <summary>
-    /// Участие в действующем составе (True)
+    /// Участие в действующем составе
     /// </summary>
     public bool IsActive { get; set; }
-    
-     /// <summary>
-     /// История должностей бойца отряда
-     /// </summary>
-     public List<MemberRankHistory> MemberRankHistory { get; set; }
-     
+
     /// <summary>
     /// UID отряда
     /// </summary>
