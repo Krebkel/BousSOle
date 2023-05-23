@@ -1,6 +1,7 @@
 using LSO.StructureContracts;
+using LSO.ProductivityContracts;
 
-namespace LSO.ProductivityContracts;
+namespace LSO.SSO.Reports;
 
 /// <summary>
 /// Класс, описывающий список работ, выполненных отрядом в конкретный день

@@ -1,3 +1,5 @@
+using LSO.SSO.Reports;
+
 namespace LSO.ProductivityContracts;
 
 /// <summary>

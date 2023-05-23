@@ -1,5 +1,6 @@
 using LSO.ProductivityContracts;
 using LSO.StructureContracts;
+using LSO.SSO.Reports;
 using Microsoft.EntityFrameworkCore;
 
 namespace BousSOle.Postgres;

@@ -1,4 +1,5 @@
 using LSO.ProductivityContracts;
+using LSO.SSO.Reports;
 
 namespace BousSOle.Postgres.Productivity;
 
