@@ -1,5 +1,4 @@
-using LSO.ProductivityContracts;
-using LSO.SSO.Reports;
+using LSO.SSO.ProductivityContracts;
 
 namespace BousSOle.Postgres.Productivity;
 
@@ -20,15 +19,16 @@ public class FactWorkService
 
     public async Task CalculateWorkFactualOutput(FactWork workPerformedReport)
     {
-        foreach (var workPerformedItem in workPerformedReport.WorkPerformedEntities)
+        /* Раньше в FactWork был лист FactWorks. Требует изменения.
+         foreach (var factWorkItem in workPerformedReport.FactWorks)
         {
-            var elementNorm = await _dbContext.ElementNorms.FindAsync(workPerformedItem.ElementNorm.Id);
+            var elementNorm = await _dbContext.ElementNorms.FindAsync(factWorkItem.ElementNorm.Id);
             if (elementNorm != null)
             {
-                workPerformedItem.ElementNorm = elementNorm;
+                factWorkItem.ElementNorm = elementNorm;
 
-                float workFactualOutput = workPerformedItem.Quantity * elementNorm.BaseNorm;
+                float workFactualOutput = factWorkItem.Quantity * elementNorm.BaseNorm;
             }
-        }
+        }*/
     }
 }

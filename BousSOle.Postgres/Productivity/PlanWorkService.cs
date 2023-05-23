@@ -1,7 +1,7 @@
 namespace BousSOle.Postgres.Productivity;
 
 /// <summary>
-/// Сервис, получающий из базы данных записи WorkHoursReport на конкретный отряд, 
+/// Сервис, получающий из базы данных записи PlanWork на конкретный отряд, 
 /// суммирует количество рабочих часов, получая плановую выработку (sumWorkHours), 
 /// находит длину смены (maxWorkHours), 
 /// количество работающих бойцов отряда (squadMemberCount)
@@ -15,7 +15,7 @@ public class PlanWorkService
         _dbContext = dbContext;
     }
 
-    public void GetWorkHoursReport(DateTime date, int squadId)
+    public void GetPlanWork(DateTime date, int squadId)
     {
         var sumWorkHours = _dbContext.PlanWorks
             .Where(w => w.Date == date && w.SquadMember.SquadID == squadId)

@@ -1,11 +1,11 @@
 using LSO.StructureContracts;
 
-namespace LSO.ProductivityContracts;
+namespace LSO.SSO.ProductivityContracts;
 
 /// <summary>
 /// Выполненный вид работ
 /// </summary>
-public class FactWorkEntity
+public class FactWork
 {
     /// <summary>
     /// Дата выполнения работы

@@ -1,7 +1,6 @@
 using LSO.StructureContracts;
-using LSO.ProductivityContracts;
 
-namespace LSO.SSO.Reports;
+namespace LSO.SSO.ProductivityContracts;
 
 /// <summary>
 /// Учёт рабочего времени для отдельного бойца отряда

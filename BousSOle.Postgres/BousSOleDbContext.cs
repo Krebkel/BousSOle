@@ -1,6 +1,5 @@
-using LSO.ProductivityContracts;
+using LSO.SSO.ProductivityContracts;
 using LSO.StructureContracts;
-using LSO.SSO.Reports;
 using Microsoft.EntityFrameworkCore;
 
 namespace BousSOle.Postgres;
@@ -55,7 +54,7 @@ public class BousSOleDbContext : DbContext
     /// <summary>
     /// Набор сущностей для учёта каждой выполненной работы отряда
     /// </summary>
-    public DbSet<FactWorkEntity> FactWorkEntities { get; set; }
+    public DbSet<FactWork> FactWorks { get; set; }
     
     /// <summary>
     /// Набор сущностей для учёта физ.лиц

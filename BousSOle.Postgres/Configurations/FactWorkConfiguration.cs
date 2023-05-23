@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BousSOle.Postgres.Configurations;
 
-public class FactWorkEntityConfiguration : IEntityTypeConfiguration<FactWork>
+public class FactWorkConfiguration : IEntityTypeConfiguration<FactWork>
 {
     /// <summary>
-    /// Занесение экземпляра класса FactWorkEntity в таблицу FactWorkEntities с первичным ключом Id
+    /// Занесение экземпляра класса FactWork в таблицу FactWorks с первичным ключом Id
     /// </summary>
     /// <param name="builder"></param>
     public void Configure(EntityTypeBuilder<FactWork> builder)
     {
-        builder.ToTable("FactWorkEntities");
+        builder.ToTable("FactWorks");
         
         builder.HasKey(entity => entity.Id);
     }

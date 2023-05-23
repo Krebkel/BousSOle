@@ -1,4 +1,4 @@
-using LSO.ProductivityContracts;
+using LSO.SSO.ProductivityContracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
