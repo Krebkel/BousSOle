@@ -13,10 +13,10 @@ public class Person
     /// <summary>
     /// ФИО (Иванов Иван Иванович)
     /// </summary>
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
     
     /// <summary>
     /// Телефон бойца (+7 (999) 999-99-99)
     /// </summary>
-    public string PhoneNumber { get; set; }
+    public string PhoneNumber { get; set; } = null!;
 }

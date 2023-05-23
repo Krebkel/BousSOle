@@ -18,15 +18,15 @@ public class PlanWorkService
     public void GetPlanWork(DateTime date, int squadId)
     {
         var sumWorkHours = _dbContext.PlanWorks
-            .Where(w => w.Date == date && w.SquadMember.SquadID == squadId)
+            .Where(w => w.Date == date && w.SquadMember.SquadId == squadId)
             .Sum(w => w.WorkHours);
 
         var maxWorkHours = _dbContext.PlanWorks
-            .Where(w => w.Date == date && w.SquadMember.SquadID == squadId)
+            .Where(w => w.Date == date && w.SquadMember.SquadId == squadId)
             .Max(w => w.WorkHours);
 
         var squadMemberCount = _dbContext.PlanWorks
-            .Count(w => w.Date == date && w.SquadMember.SquadID == squadId);
+            .Count(w => w.Date == date && w.SquadMember.SquadId == squadId);
 
         // Console.WriteLine($"Sum of WorkHours: {sumWorkHours}");
         // Console.WriteLine($"Max WorkHours: {maxWorkHours}");

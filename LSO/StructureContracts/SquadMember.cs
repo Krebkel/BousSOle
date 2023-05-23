@@ -13,7 +13,7 @@ public class SquadMember
     /// <summary>
     /// Физическое лицо
     /// </summary>
-    public Person Person { get; set; }
+    public Person Person { get; set; } = null!;
     
     /// <summary>
     /// Должность в отряде
@@ -33,10 +33,10 @@ public class SquadMember
     /// <summary>
     /// UID отряда
     /// </summary>
-    public int SquadID { get; set; }
+    public int SquadId { get; set; }
     
     /// <summary>
     /// Отряд (ССО "Агонь")
     /// </summary>
-    public Squad Squad { get; set; }
+    public Squad Squad { get; set; } = null!;
 }

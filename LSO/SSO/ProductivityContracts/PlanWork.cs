@@ -25,7 +25,7 @@ public class PlanWork
     /// <summary>
     /// Боец отряда (Иванов Иван Иванович)
     /// </summary>
-    public SquadMember SquadMember { get; set; }
+    public SquadMember SquadMember { get; set; } = null!;
     
     /// <summary>
     /// Статус (Работал/Выходной/...)

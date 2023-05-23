@@ -13,27 +13,27 @@ public class Squad
     /// <summary>
     /// Название ЛСО (ССО "Агонь")
     /// </summary>
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
     
     /// <summary>
     /// Регион, в котором находится штаб (г. Москва)
     /// </summary>
-    public string Region { get; set; }
+    public string Region { get; set; } = null!;
     
     /// <summary>
     /// Ссылка на ВК отряда (https://vk.com/ssoagon)
     /// </summary>
-    public string VKUrl { get; set; }
+    public string VkUrl { get; set; } = null!;
     
     /// <summary>
     /// UID учебного заведения
     /// </summary>
-    public int InstitutionID { get; set; }
+    public int InstitutionId { get; set; }
     
     /// <summary>
     /// Учебное заведение базирования (ФГБОУ ВО МАДИ)
     /// </summary>
-    public Institution Institution { get; set; }
+    public Institution Institution { get; set; } = null!;
     
     /// <summary>
     /// Направление отряда

@@ -25,12 +25,12 @@ public class FactWork
     /// <summary>
     /// Отряд, выполнивший работу
     /// </summary>
-    public Squad Squad { get; set; }
+    public Squad Squad { get; set; } = null!;
 
     /// <summary>
     /// Наименование работы с уточнениями, заполняется отрядом
     /// </summary>
-    public string WorkName { get; set; }
+    public string WorkName { get; set; } = null!;
 
     /// <summary>
     /// UID вида работ
@@ -40,7 +40,7 @@ public class FactWork
     /// <summary>
     /// Вид работы
     /// </summary>
-    public ElementNorm ElementNorm { get; set; }
+    public ElementNorm ElementNorm { get; set; } = null!;
 
     /// <summary>
     /// Если норма учитывает дистанцию, то отряд обязан указать её.
