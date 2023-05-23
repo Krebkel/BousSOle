@@ -6,7 +6,7 @@ namespace BousSOle.Postgres.Productivity;
 /// находит длину смены (maxWorkHours), 
 /// количество работающих бойцов отряда (squadMemberCount)
 /// </summary>
-public class PlanWorkService
+internal class PlanWorkService
 {
     private readonly BousSOleDbContext _dbContext;
 

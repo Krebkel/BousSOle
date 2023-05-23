@@ -15,7 +15,7 @@ public class FactWork
     /// <summary>
     /// Дата выполнения работы
     /// </summary>
-    public DateTime Date { get; set; }
+    public DateTimeOffset Date { get; set; }
 
     /// <summary>
     /// UID отряда, выполнившего работу

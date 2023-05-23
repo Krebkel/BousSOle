@@ -10,12 +10,12 @@ public class PlanWork
     /// <summary>
     /// UID учетного дня
     /// </summary>
-    public int Id { get;set; }
+    public int Id { get; set; }
     
     /// <summary>
     /// Учётный день (11.05.2023)
     /// </summary>
-    public DateTime Date { get; set; }
+    public DateTimeOffset Date { get; set; }
     
     /// <summary>
     /// UID бойца

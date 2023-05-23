@@ -8,7 +8,7 @@ namespace BousSOle.Postgres.Productivity;
 /// Скорее всего, данный сервис будет переделан. Как минимум, необходимо добавить обработку дистанции.
 /// Как максимум, это должно происходить в рил-тайме на интерфейсе при каждом изменении строки WorkPerformedEntity
 /// </summary>
-public class FactWorkService
+internal class FactWorkService
 {
     private readonly BousSOleDbContext _dbContext;
 

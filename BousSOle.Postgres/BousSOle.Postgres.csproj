@@ -18,7 +18,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\LSO\LSO.csproj" />
-      <ProjectReference Include="..\BousSOle\BousSOle.csproj" />
     </ItemGroup>
 
 </Project>

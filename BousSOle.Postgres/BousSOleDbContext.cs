@@ -1,3 +1,4 @@
+using System.Reflection;
 using LSO.SSO.ProductivityContracts;
 using LSO.StructureContracts;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ namespace BousSOle.Postgres;
 /// Класс представляет собой контекст базы данных, который используется для взаимодействия с PostgreSQL через Entity Framework Core.
 /// Он объединяет наборы сущностей и конфигурации модели базы данных для обеспечения доступа к данным.
 /// </summary>
-public class BousSOleDbContext : DbContext
+internal class BousSOleDbContext : DbContext
 {
     /// <summary>
     /// Внутреннее поле, которое определяет схему базы данных для таблиц.
@@ -22,7 +23,6 @@ public class BousSOleDbContext : DbContext
     /// Принимает настройки контекста базы данных и передает их базовому классу DbContext для инициализации.
     /// Это позволяет создать экземпляр контекста базы данных, который будет использоваться для взаимодействия с PostgreSQL.
     /// </summary>
-    /// <param name="options"></param>
     public BousSOleDbContext(DbContextOptions<BousSOleDbContext> options) : base(options)
     {}
 
@@ -60,4 +60,10 @@ public class BousSOleDbContext : DbContext
     /// Набор сущностей для учёта физ.лиц
     /// </summary>
     public DbSet<Person> Persons { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.HasDefaultSchema(ServiceSchema);
+    }
 }
