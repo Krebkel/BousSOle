@@ -6,26 +6,26 @@ namespace BousSOle.Postgres.Productivity;
 /// находит длину смены (maxWorkHours), 
 /// количество работающих бойцов отряда (squadMemberCount)
 /// </summary>
-public class WorkHoursReportService
+public class PlanWorkService
 {
     private readonly BousSOleDbContext _dbContext;
 
-    public WorkHoursReportService(BousSOleDbContext dbContext)
+    public PlanWorkService(BousSOleDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
     public void GetWorkHoursReport(DateTime date, int squadId)
     {
-        var sumWorkHours = _dbContext.WorkHoursReports
+        var sumWorkHours = _dbContext.PlanWorks
             .Where(w => w.Date == date && w.SquadMember.SquadID == squadId)
             .Sum(w => w.WorkHours);
 
-        var maxWorkHours = _dbContext.WorkHoursReports
+        var maxWorkHours = _dbContext.PlanWorks
             .Where(w => w.Date == date && w.SquadMember.SquadID == squadId)
             .Max(w => w.WorkHours);
 
-        var squadMemberCount = _dbContext.WorkHoursReports
+        var squadMemberCount = _dbContext.PlanWorks
             .Count(w => w.Date == date && w.SquadMember.SquadID == squadId);
 
         // Console.WriteLine($"Sum of WorkHours: {sumWorkHours}");

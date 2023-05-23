@@ -5,7 +5,7 @@ namespace LSO.ProductivityContracts;
 /// <summary>
 /// Выполненный вид работ
 /// </summary>
-public class WorkPerformedEntity
+public class FactWorkEntity
 {
     /// <summary>
     /// Дата выполнения работы

@@ -9,16 +9,16 @@ namespace BousSOle.Postgres.Productivity;
 /// Скорее всего, данный сервис будет переделан. Как минимум, необходимо добавить обработку дистанции.
 /// Как максимум, это должно происходить в рил-тайме на интерфейсе при каждом изменении строки WorkPerformedEntity
 /// </summary>
-public class WorkPerformedService
+public class FactWorkService
 {
     private readonly BousSOleDbContext _dbContext;
 
-    public WorkPerformedService(BousSOleDbContext dbContext)
+    public FactWorkService(BousSOleDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
-    public async Task CalculateWorkFactualOutput(WorkPerformedReport workPerformedReport)
+    public async Task CalculateWorkFactualOutput(FactWork workPerformedReport)
     {
         foreach (var workPerformedItem in workPerformedReport.WorkPerformedEntities)
         {
@@ -28,9 +28,6 @@ public class WorkPerformedService
                 workPerformedItem.ElementNorm = elementNorm;
 
                 float workFactualOutput = workPerformedItem.Quantity * elementNorm.BaseNorm;
-                // Сохранение значения WorkFactualOutput или его использования в вашем приложении
-                // Например:
-                // workPerformedItem.WorkFactualOutput = workFactualOutput;
             }
         }
     }

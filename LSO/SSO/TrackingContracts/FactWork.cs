@@ -6,7 +6,7 @@ namespace LSO.SSO.Reports;
 /// <summary>
 /// Класс, описывающий список работ, выполненных отрядом в конкретный день
 /// </summary>
-public class WorkPerformedReport
+public class FactWork
 {
     /// <summary>
     /// Дата выполнения работы
@@ -26,5 +26,5 @@ public class WorkPerformedReport
     /// <summary>
     /// Список выполненных видов работ
     /// </summary>
-    public List<WorkPerformedEntity> WorkPerformedEntities { get; set; }
+    public List<FactWorkEntity> WorkPerformedEntities { get; set; }
 }

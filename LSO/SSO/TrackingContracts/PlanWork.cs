@@ -6,7 +6,7 @@ namespace LSO.SSO.Reports;
 /// <summary>
 /// Учёт рабочего времени для отдельного бойца отряда
 /// </summary>
-public class WorkHoursReport
+public class PlanWork
 {
     /// <summary>
     /// Учётный день (11.05.2023)
