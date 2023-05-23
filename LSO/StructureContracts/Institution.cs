@@ -6,6 +6,11 @@ namespace LSO.StructureContracts;
 public class Institution
 {
     /// <summary>
+    /// UID учебного заведения
+    /// </summary>
+    public int Id { get;set; }
+    
+    /// <summary>
     /// Краткое название (ФГБОУ ВО МГТУ "СТАНКИН")
     /// </summary>
     public string ShortName { get; set; }
@@ -29,9 +34,4 @@ public class Institution
     /// Сайт структуры учебного заведения (https://stankin.ru/sveden/employees)
     /// </summary>
     public string StructWebsite { get; set; }
-    
-    /// <summary>
-    /// UID
-    /// </summary>
-    public int Id { get;set; }
 }

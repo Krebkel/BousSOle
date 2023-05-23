@@ -6,6 +6,11 @@ namespace LSO.StructureContracts;
 public class SquadMember
 {
     /// <summary>
+    /// UID бойца отряда
+    /// </summary>
+    public int Id { get;set; }
+    
+    /// <summary>
     /// Физическое лицо
     /// </summary>
     public Person Person { get; set; }
@@ -34,9 +39,4 @@ public class SquadMember
     /// Отряд (ССО "Агонь")
     /// </summary>
     public Squad Squad { get; set; }
-    
-    /// <summary>
-    /// UID бойца отряда
-    /// </summary>
-    public int Id { get;set; }
 }

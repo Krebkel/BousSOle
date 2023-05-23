@@ -8,6 +8,11 @@ namespace LSO.SSO.ProductivityContracts;
 public class PlanWork
 {
     /// <summary>
+    /// UID учетного дня
+    /// </summary>
+    public int Id { get;set; }
+    
+    /// <summary>
     /// Учётный день (11.05.2023)
     /// </summary>
     public DateTime Date { get; set; }
@@ -30,10 +35,5 @@ public class PlanWork
     /// <summary>
     /// Кол-во часов выработки (10)
     /// </summary>
-    public float WorkHours { get; set; }  
-    
-    /// <summary>
-    /// UID
-    /// </summary>
-    public int Id { get;set; }                          
+    public float WorkHours { get; set; }
 }

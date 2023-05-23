@@ -6,6 +6,11 @@
 public class Squad
 {
     /// <summary>
+    /// UID отряда
+    /// </summary>
+    public int Id { get;set; }
+    
+    /// <summary>
     /// Название ЛСО (ССО "Агонь")
     /// </summary>
     public string Name { get; set; }
@@ -34,9 +39,4 @@ public class Squad
     /// Направление отряда
     /// </summary>
     public SquadType SquadType { get; set; }
-    
-    /// <summary>
-    /// UID отряда
-    /// </summary>
-    public int Id { get;set; }
 }

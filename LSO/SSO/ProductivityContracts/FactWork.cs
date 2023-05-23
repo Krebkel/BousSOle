@@ -8,6 +8,11 @@ namespace LSO.SSO.ProductivityContracts;
 public class FactWork
 {
     /// <summary>
+    /// UID работы
+    /// </summary>
+    public int Id { get; set; }
+    
+    /// <summary>
     /// Дата выполнения работы
     /// </summary>
     public DateTime Date { get; set; }
@@ -46,9 +51,4 @@ public class FactWork
     /// Количество выполненных работ в единицах измерения, описанных в сборнике элементных норм
     /// </summary>
     public float Quantity { get; set; }
-
-    /// <summary>
-    /// UID работы
-    /// </summary>
-    public int Id { get; set; }
 }

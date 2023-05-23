@@ -6,6 +6,11 @@ namespace LSO.SSO.ProductivityContracts;
 public class ElementNorm
 {
     /// <summary>
+    /// UID норматива
+    /// </summary>
+    public int Id { get;set; }
+    
+    /// <summary>
     /// ЕНиР, ГЭСН, ФЕР или др.
     /// </summary>
     public string NormCollection { get; set; }
@@ -34,14 +39,9 @@ public class ElementNorm
     /// Зависит ли расчёт по этой статье от дистанции и каким образом
     /// </summary>
     public NormType NormType { get; set; }
-    
+
     /// <summary>
     /// Норма времени на каждые следующие 10 метров ЕСЛИ норма зависит от дистанции
     /// </summary>
     public float? DistanceNorm { get; set; }
-    
-    /// <summary>
-    /// UID
-    /// </summary>
-    public int Id { get;set; }
 }
