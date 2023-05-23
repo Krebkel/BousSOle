@@ -16,7 +16,7 @@ public class WorkHoursReport
     /// <summary>
     /// UID бойца
     /// </summary>
-    public int SquadMemberID { get; set; }
+    public int SquadMemberId { get; set; }
     
     /// <summary>
     /// Боец отряда (Иванов Иван Иванович)

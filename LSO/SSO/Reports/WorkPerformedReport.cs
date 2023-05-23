@@ -27,10 +27,4 @@ public class WorkPerformedReport
     /// Список выполненных видов работ
     /// </summary>
     public List<WorkPerformedEntity> WorkPerformedEntities { get; set; }
-    
-    /// <summary>
-    /// Уникальный идентификатор
-    /// </summary>
-    public int Id { get; set; }
-
 }
