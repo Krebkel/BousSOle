@@ -40,4 +40,3 @@ public class Squad
     /// </summary>
     public int Id { get;set; }
 }
-

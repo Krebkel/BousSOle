@@ -13,5 +13,3 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
         builder.HasKey(entity => entity.Id);
     }
 }
-
-

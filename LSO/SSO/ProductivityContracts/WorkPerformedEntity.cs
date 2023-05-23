@@ -11,7 +11,7 @@ public class WorkPerformedEntity
     /// Дата выполнения работы
     /// </summary>
     public DateTime Date { get; set; }
-    
+
     /// <summary>
     /// UID отряда, выполнившего работу
     /// </summary>
@@ -46,13 +46,9 @@ public class WorkPerformedEntity
     /// Количество выполненных работ в единицах измерения, описанных в сборнике элементных норм
     /// </summary>
     public float Quantity { get; set; }
-    
+
     /// <summary>
     /// UID работы
     /// </summary>
     public int Id { get; set; }
 }
-    
-    
-
-
