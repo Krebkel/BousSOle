@@ -16,5 +16,7 @@ internal class SquadConfiguration : IEntityTypeConfiguration<Squad>
         
         builder.Property(r => r.SquadType)
             .HasConversion(new EnumToStringConverter<SquadType>());
+
+        builder.HasOne(s => s.Institution).WithMany().IsRequired();
     }
 }

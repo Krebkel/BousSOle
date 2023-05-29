@@ -12,9 +12,11 @@ internal class PlanWorkConfiguration : IEntityTypeConfiguration<PlanWork>
     /// </summary>
     public void Configure(EntityTypeBuilder<PlanWork> builder)
     {
-        builder.HasKey(entity => entity.Id);
+        builder.HasKey(p => p.Id);
         
-        builder.Property(r => r.WorkerActivityStatus)
+        builder.Property(p => p.WorkerActivityStatus)
             .HasConversion(new EnumToStringConverter<WorkerActivityStatus>());
+
+        builder.HasOne(p => p.SquadMember).WithMany().IsRequired();
     }
 }
