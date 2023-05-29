@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Boussole.Postgres.Migrations
+namespace Boussole.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
