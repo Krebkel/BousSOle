@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BousSOle.Postgres.Migrations
 {
     [DbContext(typeof(BousSOleDbContext))]
-    [Migration("20230524194011_Initial")]
+    [Migration("20230529155723_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,6 +20,7 @@ namespace BousSOle.Postgres.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("bousSOle")
                 .HasAnnotation("ProductVersion", "7.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -55,12 +56,13 @@ namespace BousSOle.Postgres.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("NormType")
-                        .HasColumnType("integer");
+                    b.Property<string>("NormType")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ElementNorms");
+                    b.ToTable("ElementNorms", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.SSO.ProductivityContracts.FactWork", b =>
@@ -71,7 +73,7 @@ namespace BousSOle.Postgres.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTimeOffset>("Date")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int?>("Distance")
@@ -96,7 +98,7 @@ namespace BousSOle.Postgres.Migrations
 
                     b.HasIndex("SquadId");
 
-                    b.ToTable("FactWorks");
+                    b.ToTable("FactWorks", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.SSO.ProductivityContracts.PlanWork", b =>
@@ -107,7 +109,7 @@ namespace BousSOle.Postgres.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTimeOffset>("Date")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("SquadMemberId")
@@ -116,14 +118,15 @@ namespace BousSOle.Postgres.Migrations
                     b.Property<float>("WorkHours")
                         .HasColumnType("real");
 
-                    b.Property<int>("WorkerActivityStatus")
-                        .HasColumnType("integer");
+                    b.Property<string>("WorkerActivityStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.HasIndex("SquadMemberId");
 
-                    b.ToTable("PlanWorks");
+                    b.ToTable("PlanWorks", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.StructureContracts.Institution", b =>
@@ -156,7 +159,7 @@ namespace BousSOle.Postgres.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Institutions");
+                    b.ToTable("Institutions", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.StructureContracts.Person", b =>
@@ -177,7 +180,7 @@ namespace BousSOle.Postgres.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Persons", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.StructureContracts.Squad", b =>
@@ -199,8 +202,9 @@ namespace BousSOle.Postgres.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SquadType")
-                        .HasColumnType("integer");
+                    b.Property<string>("SquadType")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("VkUrl")
                         .IsRequired()
@@ -210,7 +214,7 @@ namespace BousSOle.Postgres.Migrations
 
                     b.HasIndex("InstitutionId");
 
-                    b.ToTable("Squads");
+                    b.ToTable("Squads", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.StructureContracts.SquadMember", b =>
@@ -224,8 +228,9 @@ namespace BousSOle.Postgres.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
-                    b.Property<int>("MemberRank")
-                        .HasColumnType("integer");
+                    b.Property<string>("MemberRank")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("PersonId")
                         .HasColumnType("integer");
@@ -242,7 +247,7 @@ namespace BousSOle.Postgres.Migrations
 
                     b.HasIndex("SquadId");
 
-                    b.ToTable("SquadMembers");
+                    b.ToTable("SquadMembers", "bousSOle");
                 });
 
             modelBuilder.Entity("LSO.SSO.ProductivityContracts.FactWork", b =>
