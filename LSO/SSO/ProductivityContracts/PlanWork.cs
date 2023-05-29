@@ -1,21 +1,31 @@
-using LSO.Structure;
-    
-namespace LSO.Productivity;
+using LSO.StructureContracts;
+
+namespace LSO.SSO.ProductivityContracts;
 
 /// <summary>
 /// Учёт рабочего времени для отдельного бойца отряда
 /// </summary>
-public class WorkHoursReport
+public class PlanWork
 {
+    /// <summary>
+    /// UID учетного дня
+    /// </summary>
+    public int Id { get; set; }
+    
     /// <summary>
     /// Учётный день (11.05.2023)
     /// </summary>
-    public DateTime Date { get; set; }
+    public DateTimeOffset Date { get; set; }
+    
+    /// <summary>
+    /// UID бойца
+    /// </summary>
+    public int SquadMemberId { get; set; }
     
     /// <summary>
     /// Боец отряда (Иванов Иван Иванович)
     /// </summary>
-    public SquadMember SquadMember { get; set; }
+    public SquadMember SquadMember { get; set; } = null!;
     
     /// <summary>
     /// Статус (Работал/Выходной/...)
@@ -25,5 +35,5 @@ public class WorkHoursReport
     /// <summary>
     /// Кол-во часов выработки (10)
     /// </summary>
-    public float WorkHours { get; set; }                            
+    public float WorkHours { get; set; }
 }

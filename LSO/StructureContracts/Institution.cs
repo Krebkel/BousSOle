@@ -1,4 +1,4 @@
-namespace LSO.Structure;
+namespace LSO.StructureContracts;
 
 /// <summary>
 /// Учебное заведение
@@ -6,27 +6,32 @@ namespace LSO.Structure;
 public class Institution
 {
     /// <summary>
+    /// UID учебного заведения
+    /// </summary>
+    public int Id { get;set; }
+    
+    /// <summary>
     /// Краткое название (ФГБОУ ВО МГТУ "СТАНКИН")
     /// </summary>
-    public string ShortName { get; set; }
+    public string ShortName { get; set; } = null!;
 
     /// <summary>
     /// Полное название  (Федеральное государственное....)
     /// </summary>
-    public string FullName { get; set; }
+    public string FullName { get; set; } = null!;
 
     /// <summary>
     /// Должность руководителя (Ректор)
     /// </summary>
-    public string AdministratorTitle { get; set; }
+    public string AdministratorTitle { get; set; } = null!;
     
     /// <summary>
     /// ФИО руководителя (Серебренный Владимир Валерьевич)
     /// </summary>
-    public string AdministratorName { get; set; }
+    public string AdministratorName { get; set; } = null!;
 
     /// <summary>
     /// Сайт структуры учебного заведения (https://stankin.ru/sveden/employees)
     /// </summary>
-    public string StructWebsite { get; set; }
+    public string StructWebsite { get; set; } = null!;
 }

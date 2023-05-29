@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BousSOle", "BousSOle\BousSO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSO", "LSO\LSO.csproj", "{02273C07-2DF8-492E-BD73-67FD3C4ED9FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BousSOle.Postgres", "BousSOle.Postgres\BousSOle.Postgres.csproj", "{7114FFA6-BBC4-4949-8974-648CFD7B1D83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{02273C07-2DF8-492E-BD73-67FD3C4ED9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02273C07-2DF8-492E-BD73-67FD3C4ED9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02273C07-2DF8-492E-BD73-67FD3C4ED9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7114FFA6-BBC4-4949-8974-648CFD7B1D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7114FFA6-BBC4-4949-8974-648CFD7B1D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7114FFA6-BBC4-4949-8974-648CFD7B1D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7114FFA6-BBC4-4949-8974-648CFD7B1D83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
