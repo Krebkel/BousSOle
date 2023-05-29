@@ -1,4 +1,4 @@
-namespace Boussole.Postgres.Data;
+namespace Boussole.Data;
 
 public class PostgresOptions
 {

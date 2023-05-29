@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using LSO.Contracts.Structure;
 
-namespace Boussole.Postgres.Data.Configurations;
+namespace Boussole.Data.Configurations;
 
 internal class PersonConfiguration : IEntityTypeConfiguration<Person>
 {

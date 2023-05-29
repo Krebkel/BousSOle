@@ -3,7 +3,7 @@ using LSO.Contracts.SSO;
 using LSO.Contracts.Structure;
 using Microsoft.EntityFrameworkCore;
 
-namespace Boussole.Postgres.Data;
+namespace Boussole.Data;
 
 #nullable disable
 

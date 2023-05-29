@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace Boussole.Postgres.Data;
+namespace Boussole.Data;
 
 /// <summary>
 /// Статический класс, содержащий методы для регистрации зависимостей в приложении.

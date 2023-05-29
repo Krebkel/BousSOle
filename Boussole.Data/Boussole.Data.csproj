@@ -22,8 +22,4 @@
       <ProjectReference Include="..\LSO\LSO.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="DataContracts\" />
-    </ItemGroup>
-
 </Project>

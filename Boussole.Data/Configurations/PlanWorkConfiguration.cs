@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Boussole.Postgres.Data.Configurations;
+namespace Boussole.Data.Configurations;
 
 internal class PlanWorkConfiguration : IEntityTypeConfiguration<PlanWork>
 {

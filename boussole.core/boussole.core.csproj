@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\boussole.postgres\boussole.postgres.csproj" />
+      <ProjectReference Include="..\Boussole.Data\Boussole.Data.csproj" />
     </ItemGroup>
 
     <ItemGroup>

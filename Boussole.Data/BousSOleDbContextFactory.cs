@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Boussole.Postgres.Data;
+namespace Boussole.Data;
 
 /// <summary>
 /// Фабрика DbContext'а для создания миграций.

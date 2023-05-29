@@ -2,7 +2,7 @@ using LSO.Contracts.SSO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Boussole.Postgres.Data.Configurations;
+namespace Boussole.Data.Configurations;
 
 internal class FactWorkConfiguration : IEntityTypeConfiguration<FactWork>
 {

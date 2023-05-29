@@ -1,4 +1,4 @@
-using Boussole.Postgres.Data;
+using Boussole.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

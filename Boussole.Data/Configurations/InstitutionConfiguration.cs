@@ -2,7 +2,7 @@ using LSO.Contracts.Structure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Boussole.Postgres.Data.Configurations;
+namespace Boussole.Data.Configurations;
 
 internal class InstitutionConfiguration : IEntityTypeConfiguration<Institution>
 {
