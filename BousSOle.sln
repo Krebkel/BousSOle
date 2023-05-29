@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BousSOle", "BousSOle\BousSOle.csproj", "{ABFAC716-90EE-4EAA-9868-B4C439E367FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boussole.core", "boussole.core\boussole.core.csproj", "{ABFAC716-90EE-4EAA-9868-B4C439E367FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSO", "LSO\LSO.csproj", "{02273C07-2DF8-492E-BD73-67FD3C4ED9FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BousSOle.Postgres", "BousSOle.Postgres\BousSOle.Postgres.csproj", "{7114FFA6-BBC4-4949-8974-648CFD7B1D83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boussole.postgres", "boussole.postgres\boussole.postgres.csproj", "{7114FFA6-BBC4-4949-8974-648CFD7B1D83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
