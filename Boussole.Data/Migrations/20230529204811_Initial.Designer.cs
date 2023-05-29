@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Boussole.Postgres.Migrations
+namespace Boussole.Data.Migrations
 {
     [DbContext(typeof(BousSOleDbContext))]
     [Migration("20230529204811_Initial")]
