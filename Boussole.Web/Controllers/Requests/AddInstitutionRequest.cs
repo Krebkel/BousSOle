@@ -1,0 +1,11 @@
+namespace Boussole.Web.Controllers.Requests;
+
+public class AddInstitutionRequest
+{
+    public int Id { get; set; }
+    public string ShortName { get; set; }
+    public string FullName { get; set; }
+    public string AdministratorTitle { get; set; }
+    public string AdministratorName { get; set; }
+    public string StructWebsite { get; set; }
+}

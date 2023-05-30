@@ -2,14 +2,14 @@ using Boussole.LSO.Contracts.Structure;
 
 namespace Boussole.LSO.Services.Structure;
 
-public class SquadsService : ISquadsService
+public class InstitutionService : IInstitutionService
 {
-    public Squad CreateSquad(Squad squad)
+    public Institution CreateInstitution(Institution institution)
     {
-        return squad;
+        return institution;
     }
 
-    public void UpdateSquad(Squad squad)
+    public void UpdateInstitution(Institution institution)
     {
         
     }
