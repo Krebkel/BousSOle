@@ -1,4 +1,4 @@
-namespace LSO.Contracts.SSO;
+namespace Boussole.LSO.Contracts.SSO;
 
 
 /// <summary>

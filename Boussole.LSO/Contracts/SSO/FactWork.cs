@@ -1,6 +1,6 @@
-using LSO.Contracts.Structure;
+using Boussole.LSO.Contracts.Structure;
 
-namespace LSO.Contracts.SSO;
+namespace Boussole.LSO.Contracts.SSO;
 
 /// <summary>
 /// Выполненный вид работ

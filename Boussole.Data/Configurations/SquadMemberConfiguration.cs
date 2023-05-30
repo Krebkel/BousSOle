@@ -1,4 +1,4 @@
-using LSO.Contracts.Structure;
+using Boussole.LSO.Contracts.Structure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;

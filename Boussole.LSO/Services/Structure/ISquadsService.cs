@@ -1,6 +1,6 @@
-using LSO.Contracts.Structure;
+using Boussole.LSO.Contracts.Structure;
 
-namespace LSO.Services.Structure;
+namespace Boussole.LSO.Services.Structure;
 
 public interface ISquadsService
 {

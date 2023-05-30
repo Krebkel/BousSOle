@@ -1,5 +1,5 @@
 // ReSharper disable InconsistentNaming
-namespace LSO.Contracts.Structure;
+namespace Boussole.LSO.Contracts.Structure;
 
 /// <summary>
 /// Направление отряда

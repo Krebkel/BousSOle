@@ -1,4 +1,4 @@
-using LSO.Contracts.SSO;
+using Boussole.LSO.Contracts.SSO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

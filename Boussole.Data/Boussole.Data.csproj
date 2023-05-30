@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\LSO\LSO.csproj" />
+      <ProjectReference Include="..\Boussole.LSO\Boussole.LSO.csproj" />
     </ItemGroup>
 
 </Project>

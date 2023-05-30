@@ -1,6 +1,6 @@
 using System.Reflection;
-using LSO.Contracts.SSO;
-using LSO.Contracts.Structure;
+using Boussole.LSO.Contracts.SSO;
+using Boussole.LSO.Contracts.Structure;
 using Microsoft.EntityFrameworkCore;
 
 namespace Boussole.Data;
@@ -8,7 +8,7 @@ namespace Boussole.Data;
 #nullable disable
 
 /// <summary>
-/// Класс представляет собой контекст базы данных, который используется для взаимодействия с PostgreSQL через Entity Framework boussole.core.
+/// Класс представляет собой контекст базы данных, который используется для взаимодействия с PostgreSQL через Entity Framework Boussole.Web.
 /// Он объединяет наборы сущностей и конфигурации модели базы данных для обеспечения доступа к данным.
 /// </summary>
 internal class BousSOleDbContext : DbContext

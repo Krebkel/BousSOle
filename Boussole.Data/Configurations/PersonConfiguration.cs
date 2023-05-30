@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using LSO.Contracts.Structure;
+using Boussole.LSO.Contracts.Structure;
 
 namespace Boussole.Data.Configurations;
 

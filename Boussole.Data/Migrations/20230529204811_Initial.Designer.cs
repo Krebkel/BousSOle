@@ -26,7 +26,7 @@ namespace Boussole.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("LSO.Contracts.SSO.ElementNorm", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.ElementNorm", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace Boussole.Data.Migrations
                     b.ToTable("ElementNorms", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.SSO.FactWork", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -101,7 +101,7 @@ namespace Boussole.Data.Migrations
                     b.ToTable("FactWorks", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.SSO.PlanWork", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.PlanWork", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -129,7 +129,7 @@ namespace Boussole.Data.Migrations
                     b.ToTable("PlanWorks", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.Structure.Institution", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Institution", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -162,7 +162,7 @@ namespace Boussole.Data.Migrations
                     b.ToTable("Institutions", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.Structure.Person", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Person", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -191,7 +191,7 @@ namespace Boussole.Data.Migrations
                     b.ToTable("Persons", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.Structure.Squad", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Squad", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -225,7 +225,7 @@ namespace Boussole.Data.Migrations
                     b.ToTable("Squads", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.Structure.SquadMember", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.SquadMember", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -258,15 +258,15 @@ namespace Boussole.Data.Migrations
                     b.ToTable("SquadMembers", "bousSOle");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.SSO.FactWork", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>
                 {
-                    b.HasOne("LSO.Contracts.SSO.ElementNorm", "ElementNorm")
+                    b.HasOne("Boussole.LSO.Contracts.SSO.ElementNorm", "ElementNorm")
                         .WithMany()
                         .HasForeignKey("ElementNormId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LSO.Contracts.Structure.Squad", "Squad")
+                    b.HasOne("Boussole.LSO.Contracts.Structure.Squad", "Squad")
                         .WithMany()
                         .HasForeignKey("SquadId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -277,9 +277,9 @@ namespace Boussole.Data.Migrations
                     b.Navigation("Squad");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.SSO.PlanWork", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.PlanWork", b =>
                 {
-                    b.HasOne("LSO.Contracts.Structure.SquadMember", "SquadMember")
+                    b.HasOne("Boussole.LSO.Contracts.Structure.SquadMember", "SquadMember")
                         .WithMany()
                         .HasForeignKey("SquadMemberId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -288,9 +288,9 @@ namespace Boussole.Data.Migrations
                     b.Navigation("SquadMember");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.Structure.Squad", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Squad", b =>
                 {
-                    b.HasOne("LSO.Contracts.Structure.Institution", "Institution")
+                    b.HasOne("Boussole.LSO.Contracts.Structure.Institution", "Institution")
                         .WithMany()
                         .HasForeignKey("InstitutionId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -299,15 +299,15 @@ namespace Boussole.Data.Migrations
                     b.Navigation("Institution");
                 });
 
-            modelBuilder.Entity("LSO.Contracts.Structure.SquadMember", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.SquadMember", b =>
                 {
-                    b.HasOne("LSO.Contracts.Structure.Person", "Person")
+                    b.HasOne("Boussole.LSO.Contracts.Structure.Person", "Person")
                         .WithMany()
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LSO.Contracts.Structure.Squad", "Squad")
+                    b.HasOne("Boussole.LSO.Contracts.Structure.Squad", "Squad")
                         .WithMany()
                         .HasForeignKey("SquadId")
                         .OnDelete(DeleteBehavior.Cascade)
