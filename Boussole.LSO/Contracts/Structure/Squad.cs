@@ -1,4 +1,6 @@
-﻿namespace Boussole.LSO.Contracts.Structure;
+﻿using Boussole.Institutions.Contracts;
+
+namespace Boussole.LSO.Contracts.Structure;
 
 /// <summary>
 /// Линейный студенческий отряд

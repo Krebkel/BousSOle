@@ -1,6 +1,6 @@
-using Boussole.LSO.Contracts.Structure;
+using Boussole.Institutions.Contracts;
 
-namespace Boussole.LSO.Services.Structure;
+namespace Boussole.Institutions.Services;
 
 public class InstitutionService : IInstitutionService
 {

@@ -1,7 +1,8 @@
 using Boussole.LSO.Contracts.Structure;
+using Boussole.LSO.Controllers.Requests;
 using Boussole.LSO.Services.Structure;
-using Boussole.Web.Controllers.Requests;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Boussole.LSO.Controllers;
 

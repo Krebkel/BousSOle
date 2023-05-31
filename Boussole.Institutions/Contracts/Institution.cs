@@ -1,4 +1,4 @@
-namespace Boussole.LSO.Contracts.Structure;
+namespace Boussole.Institutions.Contracts;
 
 /// <summary>
 /// Учебное заведение

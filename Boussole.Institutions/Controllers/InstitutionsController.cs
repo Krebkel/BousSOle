@@ -1,9 +1,10 @@
-using Boussole.LSO.Contracts.Structure;
-using Boussole.LSO.Services.Structure;
-using Boussole.Web.Controllers.Requests;
+using Boussole.Institutions.Contracts;
+using Boussole.Institutions.Controllers.Requests;
+using Boussole.Institutions.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
-namespace Boussole.LSO.Controllers;
+namespace Boussole.Institutions.Controllers;
 
 [ApiController]
 [Route("api/Institutions")]

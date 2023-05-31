@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boussole.Data", "Boussole.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boussole.DataContracts", "Boussole.DataContracts\Boussole.DataContracts.csproj", "{AAFA6F58-D791-4CBD-B07A-CCB977F0FB31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boussole.Institutions", "Boussole.Institutions\Boussole.Institutions.csproj", "{4C6B6573-542E-44AE-9031-92A28FAAEBB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{AAFA6F58-D791-4CBD-B07A-CCB977F0FB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAFA6F58-D791-4CBD-B07A-CCB977F0FB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAFA6F58-D791-4CBD-B07A-CCB977F0FB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6B6573-542E-44AE-9031-92A28FAAEBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6B6573-542E-44AE-9031-92A28FAAEBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6B6573-542E-44AE-9031-92A28FAAEBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6B6573-542E-44AE-9031-92A28FAAEBB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,4 @@
-namespace Boussole.Web.Controllers.Requests;
+namespace Boussole.Institutions.Controllers.Requests;
 
 public class UpdateInstitutionRequest
 {
