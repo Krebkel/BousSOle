@@ -1,4 +1,4 @@
-using Boussole.LSO.Contracts.Structure;
+using Boussole.Institutions.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

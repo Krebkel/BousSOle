@@ -13,6 +13,11 @@ public class SquadMember
     /// <summary>
     /// Физическое лицо
     /// </summary>
+    public int PersonId { get; set; }
+    
+    /// <summary>
+    /// Физическое лицо
+    /// </summary>
     public Person Person { get; set; } = null!;
     
     /// <summary>
