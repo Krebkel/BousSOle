@@ -30,13 +30,8 @@ public class Squad
     /// <summary>
     /// UID учебного заведения
     /// </summary>
-    public int InstitutionId { get; set; }
-    
-    /// <summary>
-    /// Учебное заведение базирования (ФГБОУ ВО МАДИ)
-    /// </summary>
-    public Institution Institution { get; set; } = null!;
-    
+    public Institution Institution { get; set; }
+
     /// <summary>
     /// Направление отряда
     /// </summary>

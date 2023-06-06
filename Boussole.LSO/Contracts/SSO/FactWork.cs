@@ -18,11 +18,6 @@ public class FactWork
     public DateTimeOffset Date { get; set; }
 
     /// <summary>
-    /// UID отряда, выполнившего работу
-    /// </summary>
-    public int SquadId { get; set; }
-
-    /// <summary>
     /// Отряд, выполнивший работу
     /// </summary>
     public Squad Squad { get; set; } = null!;
@@ -31,12 +26,7 @@ public class FactWork
     /// Наименование работы с уточнениями, заполняется отрядом
     /// </summary>
     public string WorkName { get; set; } = null!;
-
-    /// <summary>
-    /// UID вида работ
-    /// </summary>
-    public int ElementNormId { get; set; }
-
+    
     /// <summary>
     /// Вид работы
     /// </summary>

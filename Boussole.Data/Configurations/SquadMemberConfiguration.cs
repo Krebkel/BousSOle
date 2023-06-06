@@ -12,12 +12,11 @@ internal class SquadMemberConfiguration : IEntityTypeConfiguration<SquadMember>
     /// </summary>
     public void Configure(EntityTypeBuilder<SquadMember> builder)
     {
-        builder.HasKey(s => s.Id);
+        builder.HasKey(s => s.Person);
         
         builder.Property(s => s.MemberRank)
             .HasConversion(new EnumToStringConverter<MemberRank>());
 
-        builder.HasOne(s => s.Person).WithMany().IsRequired();
         builder.HasOne(s => s.Squad).WithMany().IsRequired();
     }
 }

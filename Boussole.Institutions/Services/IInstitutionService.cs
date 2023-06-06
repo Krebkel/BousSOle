@@ -4,6 +4,9 @@ namespace Boussole.Institutions.Services;
 
 public interface IInstitutionService
 {
-    Institution CreateInstitution(Institution institution);
-    void UpdateInstitution(Institution institution);
+    Task<Institution> CreateInstitutionAsync(Institution institution);
+
+    Task UpdateInstitutionAsync(Institution institution);
+
+    Task<Institution> GetInstitutionByIdAsync(int institutionId);
 }

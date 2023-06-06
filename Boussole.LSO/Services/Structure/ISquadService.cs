@@ -4,6 +4,9 @@ namespace Boussole.LSO.Services.Structure;
 
 public interface ISquadService
 {
-    Squad CreateSquad(Squad squad);
-    void UpdateSquad(Squad squad);
+    Task<Squad> CreateSquadAsync(Squad squad);
+
+    Task UpdateSquadAsync(Squad squad);
+
+    Task<Squad> GetSquadByIdAsync(int squadId);
 }

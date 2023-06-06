@@ -6,10 +6,10 @@ namespace Boussole.LSO.Contracts.Structure;
 public class Person
 {
     /// <summary>
-    /// UID физ.лица
+    /// Первичный ключ физ.лица - ИНН
     /// </summary>
-    public int Id { get; set; }
-    
+    public int PersonInn { get; set; }
+
     /// <summary>
     /// Фамилия (Иванов)
     /// </summary>
@@ -26,7 +26,12 @@ public class Person
     public string Patronymic { get; set; } = null!;
     
     /// <summary>
-    /// Телефон бойца (+7 (999) 999-99-99)
+    /// Телефон человека (+7 (999) 999-99-99)
     /// </summary>
-    public string PhoneNumber { get; set; } = null!;
+    public string? PhoneNumber { get; set; }
+    
+    /// <summary>
+    /// Почта человека 
+    /// </summary>
+    public string? EMail { get; set; }
 }

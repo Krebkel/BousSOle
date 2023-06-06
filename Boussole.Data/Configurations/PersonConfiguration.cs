@@ -8,6 +8,6 @@ internal class PersonConfiguration : IEntityTypeConfiguration<Person>
 {
     public void Configure(EntityTypeBuilder<Person> builder)
     {
-        builder.HasKey(entity => entity.Id);
+        builder.HasKey(entity => entity.PersonInn);
     }
 }

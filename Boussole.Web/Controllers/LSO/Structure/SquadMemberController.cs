@@ -1,9 +1,9 @@
-using Boussole.Core.Controllers.LSO.Requests;
+using Boussole.Core.Controllers.LSO.Structure.Requests;
 using Boussole.LSO.Contracts.Structure;
 using Boussole.LSO.Services.Structure;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boussole.Core.Controllers.LSO;
+namespace Boussole.Core.Controllers.LSO.Structure;
 
 [ApiController]
 [Route("api/squadmembers")]
@@ -26,17 +26,18 @@ public class SquadMemberController : ControllerBase
         // Создание объекта SquadMember из данных request
         var squadMember = new SquadMember
         {
-            PersonId = request.PersonId,
+            Person = request.Person,
             MemberRank = request.MemberRank,
             YearEnlisted = request.YearEnlisted,
             IsActive = request.IsActive,
-            SquadId = request.SquadId
+            Squad = request.Squad
         };
 
         // Добавление бойца в отряд
         var squadMemberId = _squadMemberService.CreateSquadMember(squadMember);
 
-        _logger.LogInformation("Боец успешно добавлен: {@SquadMember}", squadMember.Id);
+        _logger.LogInformation("Боец успешно добавлен: {@Surname} {@Name} {@Patronymic}", 
+            squadMember.Person.Surname, squadMember.Person.Name, squadMember.Person.Patronymic);
 
         // Возвращение результата
         return Ok(new { SquadMemberId = squadMemberId });
@@ -50,17 +51,18 @@ public class SquadMemberController : ControllerBase
         // Обновление объекта SquadMember из данных request
         var squadMember = new SquadMember
         {
-            PersonId = request.PersonId,
+            Person = request.Person,
             MemberRank = request.MemberRank,
             YearEnlisted = request.YearEnlisted,
             IsActive = request.IsActive,
-            SquadId = request.SquadId
+            Squad = request.Squad
         };
 
         // Обновление информации о бойце отряда
         _squadMemberService.UpdateSquadMember(squadMember);
 
-        _logger.LogInformation("Боец успешно обновлен: {@SquadMember}", squadMember.Id);
+        _logger.LogInformation("Боец успешно обновлен: {@Surname} {@Name} {@Patronymic}", 
+            squadMember.Person.Surname, squadMember.Person.Name, squadMember.Person.Patronymic);
 
         // Возвращение результата
         return Ok();

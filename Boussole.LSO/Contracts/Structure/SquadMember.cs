@@ -6,14 +6,9 @@ namespace Boussole.LSO.Contracts.Structure;
 public class SquadMember
 {
     /// <summary>
-    /// UID бойца отряда
+    /// Id бойца
     /// </summary>
-    public int Id { get;set; }
-    
-    /// <summary>
-    /// Физическое лицо
-    /// </summary>
-    public int PersonId { get; set; }
+    public int Id { get; set; }
     
     /// <summary>
     /// Физическое лицо
@@ -36,12 +31,7 @@ public class SquadMember
     public bool IsActive { get; set; }
 
     /// <summary>
-    /// UID отряда
+    /// Отряд
     /// </summary>
-    public int SquadId { get; set; }
-    
-    /// <summary>
-    /// Отряд (ССО "Агонь")
-    /// </summary>
-    public Squad Squad { get; set; } = null!;
+    public Squad Squad { get; set; }
 }

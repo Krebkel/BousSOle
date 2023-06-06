@@ -26,9 +26,19 @@ public class Institution
     public string AdministratorTitle { get; set; } = null!;
     
     /// <summary>
-    /// ФИО руководителя (Серебренный Владимир Валерьевич)
+    /// Фамилия руководителя (Серебренный)
+    /// </summary>
+    public string AdministratorSurname { get; set; } = null!;
+    
+    /// <summary>
+    /// Имя руководителя (Владимир)
     /// </summary>
     public string AdministratorName { get; set; } = null!;
+    
+    /// <summary>
+    /// Отчество руководителя (Валерьевич)
+    /// </summary>
+    public string AdministratorPatronymic { get; set; } = null!;
 
     /// <summary>
     /// Сайт структуры учебного заведения (https://stankin.ru/sveden/employees)

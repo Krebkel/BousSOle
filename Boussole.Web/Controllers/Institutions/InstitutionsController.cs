@@ -1,66 +1,60 @@
 using Boussole.Core.Controllers.Institutions.Requests;
-using Boussole.Institutions.Contracts;
 using Boussole.Institutions.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Boussole.Core.Controllers.Institutions;
 
 [ApiController]
-[Route("api/Institutions")]
+[Route("api/institutions")]
 public class InstitutionController : ControllerBase
 {
     private readonly ILogger<InstitutionController> _logger;
-    private readonly IInstitutionService _InstitutionService;
+    private readonly IInstitutionService _institutionService;
 
-    public InstitutionController(ILogger<InstitutionController> logger, IInstitutionService InstitutionService)
+    public InstitutionController(ILogger<InstitutionController> logger, IInstitutionService institutionService)
     {
         _logger = logger;
-        _InstitutionService = InstitutionService;
+        _institutionService = institutionService;
     }
 
     [HttpPost]
-    public IActionResult AddInstitution([FromBody] AddInstitutionRequest request)
+    public async Task<IActionResult> AddInstitution([FromBody] AddInstitutionRequest request)
     {
         // Проверка и валидация данных request
 
         // Создание объекта Institution из данных request
-        var Institution = new Institution
-        {
-            ShortName = request.ShortName,
-            FullName = request.FullName,
-            AdministratorTitle = request.AdministratorTitle,
-            AdministratorName = request.AdministratorName,
-            StructWebsite = request.StructWebsite
-        };
+        var institution = request.ToInstitution();
 
-        // Создание отряда
-        var InstitutionId = _InstitutionService.CreateInstitution(Institution);
+        // Создание учебного заведения
+        var createdInstitution = await _institutionService.CreateInstitutionAsync(institution);
 
-        _logger.LogInformation("Учебное заведение успешно добавлено: {@Institution}", Institution.Id);
+        _logger.LogInformation("Учебное заведение успешно добавлено: {@ShortName}", createdInstitution.ShortName);
 
         // Возвращение результата
-        return Ok(new { InstitutionId = InstitutionId });
+        return Ok();
     }
 
     [HttpPost]
-    public IActionResult UpdateInstitution([FromBody] UpdateInstitutionRequest request)
+    public async Task<IActionResult> UpdateInstitution([FromBody] UpdateInstitutionRequest request)
     {
         // Проверка и валидация данных request
 
-        // Обновление объекта Institution из данных request
-        var Institution = new Institution
+        // Получение существующего учебного заведения из базы данных, например по его идентификатору
+        var existingInstitution = await _institutionService.GetInstitutionByIdAsync(request.InstitutionId);
+
+        if (existingInstitution == null)
         {
-            ShortName = request.ShortName,
-            FullName = request.FullName,
-            AdministratorTitle = request.AdministratorTitle,
-            AdministratorName = request.AdministratorName,
-            StructWebsite = request.StructWebsite
-        };
+            // Возвращение ошибки, если учебное заведение не найдено
+            return NotFound();
+        }
 
-        // Обновление отряда
-        _InstitutionService.UpdateInstitution(Institution);
+        // Обновление объекта Institution из данных request
+        var updatedInstitution = request.ToUpdateInstitution(existingInstitution);
 
-        _logger.LogInformation("Учебное заведение успешно обновлено: {@Institution}", Institution.Id);
+        // Обновление учебного заведения
+        await _institutionService.UpdateInstitutionAsync(updatedInstitution);
+
+        _logger.LogInformation("Учебное заведение успешно обновлено: {@ShortName}", updatedInstitution.ShortName);
 
         // Возвращение результата
         return Ok();
