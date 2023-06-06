@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Boussole.Core.Controllers.LSO.Structure;
 
- [ApiController]
+[ApiController]
 [Route("api/persons")]
 public class PersonController : ControllerBase
 {
@@ -21,43 +21,59 @@ public class PersonController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddPerson([FromBody] AddPersonRequest request)
     {
-        // Проверка и валидация данных request
+        try
+        {
+            // Проверка и валидация данных request
 
-        // Создание объекта Person из данных request
-        var person = request.ToPerson();
+            // Создание объекта Person из данных request
+            var person = request.ToPerson();
 
-        // Создание физического лица
-        var createdPerson = await _personService.CreatePersonAsync(person);
+            // Создание физического лица
+            var createdPerson = await _personService.CreatePersonAsync(person);
 
-        _logger.LogInformation("Физическое лицо успешно добавлено: {@Surname} {@Name} {@Patronymic}", createdPerson.Surname, createdPerson.Name, createdPerson.Patronymic);
+            _logger.LogInformation("Физическое лицо успешно добавлено: {@Surname} {@Name} {@Patronymic}", createdPerson.Surname, createdPerson.Name, createdPerson.Patronymic);
 
-        // Возвращение результата
-        return Ok();
+            // Возвращение результата
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при добавлении физического лица");
+            return BadRequest("Ошибка при добавлении физического лица");
+        }
     }
 
-    [HttpPost]
+    [HttpPut]
     public async Task<IActionResult> UpdatePerson([FromBody] UpdatePersonRequest request)
     {
-        // Проверка и валидация данных request
-
-        // Получение существующего физического лица из базы данных, например по его идентификатору
-        var existingPerson = await _personService.GetPersonByIdAsync(request.PersonInn);
-
-        if (existingPerson == null)
+        try
         {
-            // Возвращение ошибки, если физическое лицо не найдено
-            return NotFound();
+            // Проверка и валидация данных request
+
+            // Получение существующего физического лица из базы данных, например по его идентификатору
+            var existingPerson = await _personService.GetPersonByIdAsync(request.PersonInn);
+
+            if (existingPerson == null)
+            {
+                // Возвращение ошибки, если физическое лицо не найдено
+                return NotFound();
+            }
+
+            // Обновление объекта Person из данных request
+            var updatedPerson = request.ToUpdatePerson(existingPerson);
+
+            // Обновление физического лица
+            await _personService.UpdatePersonAsync(updatedPerson);
+
+            _logger.LogInformation("Физическое лицо успешно обновлено: {@Surname} {@Name} {@Patronymic}", updatedPerson.Surname, updatedPerson.Name, updatedPerson.Patronymic);
+
+            // Возвращение результата
+            return Ok();
         }
-
-        // Обновление объекта Person из данных request
-        var updatedPerson = request.ToUpdatePerson(existingPerson);
-
-        // Обновление физического лица
-        await _personService.UpdatePersonAsync(updatedPerson);
-
-        _logger.LogInformation("Физическое лицо успешно обновлено: {@Surname} {@Name} {@Patronymic}", updatedPerson.Surname, updatedPerson.Name, updatedPerson.Patronymic);
-
-        // Возвращение результата
-        return Ok();
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при обновлении физического лица");
+            return BadRequest("Ошибка при обновлении физического лица");
+        }
     }
 }

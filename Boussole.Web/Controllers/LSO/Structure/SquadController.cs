@@ -21,43 +21,59 @@ public class SquadController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddSquad([FromBody] AddSquadRequest request)
     {
-        // Проверка и валидация данных request
+        try
+        {
+            // Проверка и валидация данных request
 
-        // Создание объекта Squad из данных request
-        var squad = request.ToSquad();
+            // Создание объекта Squad из данных request
+            var squad = request.ToSquad();
 
-        // Создание отряда
-        var createdSquad = await _squadService.CreateSquadAsync(squad);
+            // Создание отряда
+            var createdSquad = await _squadService.CreateSquadAsync(squad);
 
-        _logger.LogInformation("Отряд успешно добавлен: {@Name} {@Region}", createdSquad.Name, createdSquad.Region);
+            _logger.LogInformation("Отряд успешно добавлен: {@Name} {@Region}", createdSquad.Name, createdSquad.Region);
 
-        // Возвращение результата
-        return Ok();
+            // Возвращение результата
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при добавлении отряда");
+            return BadRequest("Ошибка при добавлении отряда");
+        }
     }
 
-    [HttpPost]
+    [HttpPut]
     public async Task<IActionResult> UpdateSquad([FromBody] UpdateSquadRequest request)
     {
-        // Проверка и валидация данных request
-
-        // Получение существующего отряда из базы данных, например по его идентификатору
-        var existingSquad = await _squadService.GetSquadByIdAsync(request.SquadId);
-
-        if (existingSquad == null)
+        try
         {
-            // Возвращение ошибки, если отряд не найден
-            return NotFound();
+            // Проверка и валидация данных request
+
+            // Получение существующего отряда из базы данных, например по его идентификатору
+            var existingSquad = await _squadService.GetSquadByIdAsync(request.SquadId);
+
+            if (existingSquad == null)
+            {
+                // Возвращение ошибки, если отряд не найден
+                return NotFound();
+            }
+
+            // Обновление объекта Squad из данных request
+            var updatedSquad = request.ToUpdateSquad(existingSquad);
+
+            // Обновление отряда
+            await _squadService.UpdateSquadAsync(updatedSquad);
+
+            _logger.LogInformation("Отряд успешно обновлен: {@Name} {@Region}", updatedSquad.Name, updatedSquad.Region);
+
+            // Возвращение результата
+            return Ok();
         }
-
-        // Обновление объекта Squad из данных request
-        var updatedSquad = request.ToUpdateSquad(existingSquad);
-
-        // Обновление отряда
-        await _squadService.UpdateSquadAsync(updatedSquad);
-
-        _logger.LogInformation("Отряд успешно обновлен: {@Name} {@Region}", updatedSquad.Name, updatedSquad.Region);
-
-        // Возвращение результата
-        return Ok();
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при обновлении отряда");
+            return BadRequest("Ошибка при обновлении отряда");
+        }
     }
 }

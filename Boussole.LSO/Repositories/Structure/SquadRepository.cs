@@ -1,7 +1,7 @@
 using Boussole.LSO.Contracts.Structure;
 using Microsoft.EntityFrameworkCore;
 
-namespace Boussole.LSO.Repositories;
+namespace Boussole.LSO.Repositories.Structure;
 
 internal class SquadRepository : ISquadRepository
 {

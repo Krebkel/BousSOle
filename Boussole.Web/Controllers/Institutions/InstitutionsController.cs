@@ -1,4 +1,5 @@
 using Boussole.Core.Controllers.Institutions.Requests;
+using Boussole.Core.Extensions;
 using Boussole.Institutions.Services;
 using Microsoft.AspNetCore.Mvc;
 

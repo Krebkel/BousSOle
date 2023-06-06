@@ -24,8 +24,4 @@
       <ProjectReference Include="..\Boussole.Data\Boussole.Data.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Controllers\LSO\SSO\" />
-    </ItemGroup>
-
 </Project>

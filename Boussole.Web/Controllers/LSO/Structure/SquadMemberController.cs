@@ -1,5 +1,5 @@
 using Boussole.Core.Controllers.LSO.Structure.Requests;
-using Boussole.LSO.Contracts.Structure;
+using Boussole.Core.Extensions;
 using Boussole.LSO.Services.Structure;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,50 +21,52 @@ public class SquadMemberController : ControllerBase
     [HttpPost]
     public IActionResult AddSquadMember([FromBody] AddSquadMemberRequest request)
     {
-        // Проверка и валидация данных request
-
-        // Создание объекта SquadMember из данных request
-        var squadMember = new SquadMember
+        try
         {
-            Person = request.Person,
-            MemberRank = request.MemberRank,
-            YearEnlisted = request.YearEnlisted,
-            IsActive = request.IsActive,
-            Squad = request.Squad
-        };
+            // Проверка и валидация данных request
 
-        // Добавление бойца в отряд
-        var squadMemberId = _squadMemberService.CreateSquadMember(squadMember);
+            // Создание объекта SquadMember из данных request
+            var squadMember = request.ToSquadMember();
 
-        _logger.LogInformation("Боец успешно добавлен: {@Surname} {@Name} {@Patronymic}", 
-            squadMember.Person.Surname, squadMember.Person.Name, squadMember.Person.Patronymic);
+            // Добавление бойца в отряд
+            var squadMemberId = _squadMemberService.CreateSquadMember(squadMember);
 
-        // Возвращение результата
-        return Ok(new { SquadMemberId = squadMemberId });
+            _logger.LogInformation("Боец успешно добавлен: {@Surname} {@Name} {@Patronymic}",
+                squadMember.Person.Surname, squadMember.Person.Name, squadMember.Person.Patronymic);
+
+            // Возвращение результата
+            return Ok(new { SquadMemberId = squadMemberId });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при добавлении бойца в отряд");
+            return BadRequest("Ошибка при добавлении бойца в отряд");
+        }
     }
 
-    [HttpPost]
+    [HttpPut]
     public IActionResult UpdateSquadMember([FromBody] UpdateSquadMemberRequest request)
     {
-        // Проверка и валидация данных request
-
-        // Обновление объекта SquadMember из данных request
-        var squadMember = new SquadMember
+        try
         {
-            Person = request.Person,
-            MemberRank = request.MemberRank,
-            YearEnlisted = request.YearEnlisted,
-            IsActive = request.IsActive,
-            Squad = request.Squad
-        };
+            // Проверка и валидация данных request
 
-        // Обновление информации о бойце отряда
-        _squadMemberService.UpdateSquadMember(squadMember);
+            // Обновление объекта SquadMember из данных request
+            var squadMember = request.ToSquadMember();
 
-        _logger.LogInformation("Боец успешно обновлен: {@Surname} {@Name} {@Patronymic}", 
-            squadMember.Person.Surname, squadMember.Person.Name, squadMember.Person.Patronymic);
+            // Обновление информации о бойце отряда
+            _squadMemberService.UpdateSquadMember(squadMember);
 
-        // Возвращение результата
-        return Ok();
+            _logger.LogInformation("Боец успешно обновлен: {@Surname} {@Name} {@Patronymic}",
+                squadMember.Person.Surname, squadMember.Person.Name, squadMember.Person.Patronymic);
+
+            // Возвращение результата
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при обновлении информации о бойце отряда");
+            return BadRequest("Ошибка при обновлении информации о бойце отряда");
+        }
     }
 }

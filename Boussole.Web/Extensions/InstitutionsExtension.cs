@@ -1,6 +1,8 @@
 using Boussole.Core.Controllers.Institutions.Requests;
 using Boussole.Institutions.Contracts;
 
+namespace Boussole.Core.Extensions;
+
 internal static class InstitutionMappingExtensions
 {
     public static Institution ToInstitution(this AddInstitutionRequest request)

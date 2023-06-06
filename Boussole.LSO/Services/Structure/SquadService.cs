@@ -1,5 +1,6 @@
 using Boussole.LSO.Contracts.Structure;
 using Boussole.LSO.Repositories;
+using Boussole.LSO.Repositories.Structure;
 using Microsoft.EntityFrameworkCore;
 
 namespace Boussole.LSO.Services.Structure;
