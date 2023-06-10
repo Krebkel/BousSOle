@@ -18,7 +18,7 @@ public class InstitutionController : ControllerBase
         _institutionService = institutionService;
     }
 
-    [HttpPost]
+    [HttpPost("add")]
     public async Task<IActionResult> AddInstitution([FromBody] AddInstitutionRequest request)
     {
         // Проверка и валидация данных request
@@ -35,7 +35,7 @@ public class InstitutionController : ControllerBase
         return Ok();
     }
 
-    [HttpPost]
+    [HttpPut("update")]
     public async Task<IActionResult> UpdateInstitution([FromBody] UpdateInstitutionRequest request)
     {
         // Проверка и валидация данных request
