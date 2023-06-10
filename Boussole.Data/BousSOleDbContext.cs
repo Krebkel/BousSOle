@@ -2,6 +2,7 @@ using System.Reflection;
 using Boussole.Institutions.Contracts;
 using Boussole.LSO.Contracts.SSO;
 using Boussole.LSO.Contracts.Structure;
+using Boussole.Persons;
 using Microsoft.EntityFrameworkCore;
 
 namespace Boussole.Data;

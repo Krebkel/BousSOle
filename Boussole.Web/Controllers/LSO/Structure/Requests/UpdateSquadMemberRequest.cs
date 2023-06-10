@@ -1,4 +1,5 @@
 using Boussole.LSO.Contracts.Structure;
+using Boussole.Persons;
 
 namespace Boussole.Core.Controllers.LSO.Structure.Requests;
 

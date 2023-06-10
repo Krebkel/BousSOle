@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Boussole.Institutions\Boussole.Institutions.csproj" />
+      <ProjectReference Include="..\Boussole.Persons\Boussole.Persons.csproj" />
     </ItemGroup>
 
     <ItemGroup>

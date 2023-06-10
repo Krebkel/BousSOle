@@ -1,3 +1,5 @@
+using Boussole.Persons;
+
 namespace Boussole.LSO.Contracts.Structure;
 
 /// <summary>

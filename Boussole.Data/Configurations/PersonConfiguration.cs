@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Boussole.LSO.Contracts.Structure;
+using Boussole.Persons;
 
 namespace Boussole.Data.Configurations;
 
