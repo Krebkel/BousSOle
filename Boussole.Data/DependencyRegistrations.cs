@@ -1,3 +1,4 @@
+using Boussole.DataContracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -20,6 +21,7 @@ public static class DependencyRegistrations
             opt.UseNpgsql(provider.GetRequiredService<IOptions<PostgresOptions>>().Value.ConnectionString, 
                 builder => builder.MigrationsHistoryTable("__EFMigrationsHistory", BousSOleDbContext.ServiceSchema)));
 
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         return services;
     }
 }
