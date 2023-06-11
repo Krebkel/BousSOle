@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Boussole.Data.Migrations
 {
     [DbContext(typeof(BousSOleDbContext))]
-    [Migration("20230611103852_Initial")]
+    [Migration("20230611121736_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -241,7 +241,7 @@ namespace Boussole.Data.Migrations
 
                     b.HasKey("PersonInn");
 
-                    b.ToTable("User", "bousSOle");
+                    b.ToTable("Users", "bousSOle");
                 });
 
             modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>

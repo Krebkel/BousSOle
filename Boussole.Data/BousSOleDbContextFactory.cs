@@ -13,7 +13,8 @@ internal class BousSOleDbContextFactory : IDesignTimeDbContextFactory<BousSOleDb
     {
         var optionsBuilder = new DbContextOptionsBuilder<BousSOleDbContext>();
         optionsBuilder.UseNpgsql(
-            "Host=***;Port=5432;Database=***;Username=***;Password=***;Pooling=true;Maximum Pool Size=10");
+            "Host=***;Port=5432;Database=***;Username=***;Password=***;Pooling=true;Maximum Pool Size=10", 
+            builder => builder.MigrationsHistoryTable("__EFMigrationsHistory", BousSOleDbContext.ServiceSchema));
 
         return new BousSOleDbContext(optionsBuilder.Options);
     }

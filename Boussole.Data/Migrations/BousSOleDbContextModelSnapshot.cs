@@ -238,7 +238,7 @@ namespace Boussole.Data.Migrations
 
                     b.HasKey("PersonInn");
 
-                    b.ToTable("User", "bousSOle");
+                    b.ToTable("Users", "bousSOle");
                 });
 
             modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>

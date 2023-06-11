@@ -6,12 +6,18 @@ BEGIN
 CREATE SCHEMA "bousSOle";
 END IF;
 END $EF$;
-
 CREATE TABLE IF NOT EXISTS "bousSOle"."__EFMigrationsHistory" (
     "MigrationId" character varying(150) NOT NULL,
     "ProductVersion" character varying(32) NOT NULL,
     CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
     );
+
+DO $EF$
+BEGIN
+        IF NOT EXISTS(SELECT 1 FROM pg_namespace WHERE nspname = 'bousSOle') THEN
+CREATE SCHEMA "bousSOle";
+END IF;
+END $EF$;
 
 CREATE TABLE "bousSOle"."ElementNorms" (
                                            "NormCollection" text NOT NULL,
@@ -55,11 +61,11 @@ CREATE TABLE "bousSOle"."Squads" (
                                      CONSTRAINT "FK_Squads_Institutions_InstitutionFullName" FOREIGN KEY ("InstitutionFullName") REFERENCES "bousSOle"."Institutions" ("FullName") ON DELETE CASCADE
 );
 
-CREATE TABLE "bousSOle"."User" (
-                                   "PersonInn" text NOT NULL,
-                                   "Password" text NOT NULL,
-                                   CONSTRAINT "PK_User" PRIMARY KEY ("PersonInn"),
-                                   CONSTRAINT "FK_User_Persons_PersonInn" FOREIGN KEY ("PersonInn") REFERENCES "bousSOle"."Persons" ("PersonInn") ON DELETE CASCADE
+CREATE TABLE "bousSOle"."Users" (
+                                    "PersonInn" text NOT NULL,
+                                    "Password" text NOT NULL,
+                                    CONSTRAINT "PK_Users" PRIMARY KEY ("PersonInn"),
+                                    CONSTRAINT "FK_Users_Persons_PersonInn" FOREIGN KEY ("PersonInn") REFERENCES "bousSOle"."Persons" ("PersonInn") ON DELETE CASCADE
 );
 
 CREATE TABLE "bousSOle"."FactWorks" (
@@ -106,6 +112,6 @@ CREATE INDEX "IX_SquadMembers_SquadName" ON "bousSOle"."SquadMembers" ("SquadNam
 CREATE INDEX "IX_Squads_InstitutionFullName" ON "bousSOle"."Squads" ("InstitutionFullName");
 
 INSERT INTO "bousSOle"."__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20230611103852_Initial', '7.0.0');
+VALUES ('20230611121736_Initial', '7.0.0');
 
 COMMIT;

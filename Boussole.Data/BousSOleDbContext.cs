@@ -3,28 +3,17 @@ using Boussole.Institutions.Contracts;
 using Boussole.LSO.Contracts.SSO;
 using Boussole.LSO.Contracts.Structure;
 using Boussole.Persons;
+using Boussole.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Boussole.Data;
 
 #nullable disable
 
-/// <summary>
-/// Класс представляет собой контекст базы данных, который используется для взаимодействия с PostgreSQL через Entity Framework Boussole.Web.
-/// Он объединяет наборы сущностей и конфигурации модели базы данных для обеспечения доступа к данным.
-/// </summary>
 internal class BousSOleDbContext : DbContext
 {
-    /// <summary>
-    /// Внутреннее поле, которое определяет схему базы данных для таблиц.
-    /// </summary>
     internal const string ServiceSchema = "bousSOle";
 
-    /// <summary>
-    /// Конструктор класса "BousSOleDbContext", используется для создания экземпляра контекста базы данных.
-    /// Принимает настройки контекста базы данных и передает их базовому классу DbContext для инициализации.
-    /// Это позволяет создать экземпляр контекста базы данных, который будет использоваться для взаимодействия с PostgreSQL.
-    /// </summary>
     public BousSOleDbContext(DbContextOptions<BousSOleDbContext> options) : base(options)
     {}
 
@@ -62,6 +51,11 @@ internal class BousSOleDbContext : DbContext
     /// Набор сущностей для учёта физ.лиц
     /// </summary>
     public DbSet<Person> Persons { get; set; }
+    
+    /// <summary>
+    /// Пользователи сервиса
+    /// </summary>
+    public DbSet<User> Users { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

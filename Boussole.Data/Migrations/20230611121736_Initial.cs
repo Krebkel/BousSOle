@@ -91,7 +91,7 @@ namespace Boussole.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Users",
                 schema: "bousSOle",
                 columns: table => new
                 {
@@ -100,9 +100,9 @@ namespace Boussole.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.PersonInn);
+                    table.PrimaryKey("PK_Users", x => x.PersonInn);
                     table.ForeignKey(
-                        name: "FK_User_Persons_PersonInn",
+                        name: "FK_Users_Persons_PersonInn",
                         column: x => x.PersonInn,
                         principalSchema: "bousSOle",
                         principalTable: "Persons",
@@ -237,7 +237,7 @@ namespace Boussole.Data.Migrations
                 schema: "bousSOle");
 
             migrationBuilder.DropTable(
-                name: "User",
+                name: "Users",
                 schema: "bousSOle");
 
             migrationBuilder.DropTable(
