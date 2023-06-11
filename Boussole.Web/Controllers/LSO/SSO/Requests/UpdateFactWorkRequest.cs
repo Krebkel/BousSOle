@@ -1,6 +1,6 @@
 using Boussole.LSO.Contracts.SSO;
 
-namespace Boussole.Core.Controllers.LSO.SSO.Requests;
+namespace Boussole.Web.Controllers.LSO.SSO.Requests;
 
 /// <summary>
 /// Запрос на обновление выполненной работы

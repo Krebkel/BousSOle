@@ -1,7 +1,7 @@
-using Boussole.Core.Controllers.LSO.Structure.Requests;
 using Boussole.LSO.Contracts.Structure;
+using Boussole.Web.Controllers.LSO.Structure.Requests;
 
-namespace Boussole.Core.Extensions;
+namespace Boussole.Web.Extensions;
 
 internal static class SquadMemberMappingExtensions
 {

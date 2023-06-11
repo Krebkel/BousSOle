@@ -227,6 +227,20 @@ namespace Boussole.Data.Migrations
                     b.ToTable("Persons", "bousSOle");
                 });
 
+            modelBuilder.Entity("Boussole.Users.User", b =>
+                {
+                    b.Property<string>("PersonInn")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("PersonInn");
+
+                    b.ToTable("User", "bousSOle");
+                });
+
             modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>
                 {
                     b.HasOne("Boussole.LSO.Contracts.Structure.Squad", "Squad")
@@ -285,6 +299,17 @@ namespace Boussole.Data.Migrations
                     b.Navigation("Person");
 
                     b.Navigation("Squad");
+                });
+
+            modelBuilder.Entity("Boussole.Users.User", b =>
+                {
+                    b.HasOne("Boussole.Persons.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonInn")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
                 });
 #pragma warning restore 612, 618
         }

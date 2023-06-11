@@ -1,4 +1,4 @@
-namespace Boussole.Core.Controllers.Institutions.Requests;
+namespace Boussole.Web.Controllers.Institutions.Requests;
 
 public class AddInstitutionRequest
 {

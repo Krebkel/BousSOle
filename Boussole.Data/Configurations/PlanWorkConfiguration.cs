@@ -8,9 +8,6 @@ namespace Boussole.Data.Configurations;
 
 internal class PlanWorkConfiguration : IEntityTypeConfiguration<PlanWork>
 {
-    /// <summary>
-    /// Занесение экземпляра класса PlanWork в таблицу PlanWorks с первичным ключом Id
-    /// </summary>
     public void Configure(EntityTypeBuilder<PlanWork> builder)
     {
         const string squadMemeberColumnName = "SquadMemberPersonInn";

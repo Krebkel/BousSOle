@@ -6,9 +6,6 @@ namespace Boussole.Data.Configurations;
 
 internal class FactWorkConfiguration : IEntityTypeConfiguration<FactWork>
 {
-    /// <summary>
-    /// Занесение экземпляра класса FactWork в таблицу FactWorks с первичным ключом Id
-    /// </summary>
     public void Configure(EntityTypeBuilder<FactWork> builder)
     {
         const string squadColumnName = "SquadName";

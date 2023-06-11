@@ -91,6 +91,26 @@ namespace Boussole.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "User",
+                schema: "bousSOle",
+                columns: table => new
+                {
+                    PersonInn = table.Column<string>(type: "text", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.PersonInn);
+                    table.ForeignKey(
+                        name: "FK_User_Persons_PersonInn",
+                        column: x => x.PersonInn,
+                        principalSchema: "bousSOle",
+                        principalTable: "Persons",
+                        principalColumn: "PersonInn",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FactWorks",
                 schema: "bousSOle",
                 columns: table => new
@@ -214,6 +234,10 @@ namespace Boussole.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "PlanWorks",
+                schema: "bousSOle");
+
+            migrationBuilder.DropTable(
+                name: "User",
                 schema: "bousSOle");
 
             migrationBuilder.DropTable(

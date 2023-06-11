@@ -1,7 +1,7 @@
 using Boussole.LSO.Contracts.SSO;
 using Boussole.LSO.Contracts.Structure;
 
-namespace Boussole.Core.Controllers.LSO.SSO.Requests;
+namespace Boussole.Web.Controllers.LSO.SSO.Requests;
 
 /// <summary>
 /// Запрос на добавление выполненной работы

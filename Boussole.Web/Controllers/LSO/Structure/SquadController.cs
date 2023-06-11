@@ -1,10 +1,12 @@
-using Boussole.Core.Controllers.LSO.Structure.Requests;
-using Boussole.Core.Extensions;
 using Boussole.LSO.Services.Structure;
+using Boussole.Web.Controllers.LSO.Structure.Requests;
+using Boussole.Web.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boussole.Core.Controllers.LSO.Structure;
+namespace Boussole.Web.Controllers.LSO.Structure;
 
+[Authorize]
 [ApiController]
 [Route("api/squads")]
 public class SquadController : ControllerBase

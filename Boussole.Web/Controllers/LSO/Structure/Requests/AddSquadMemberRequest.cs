@@ -1,7 +1,7 @@
 using Boussole.LSO.Contracts.Structure;
 using Boussole.Persons;
 
-namespace Boussole.Core.Controllers.LSO.Structure.Requests;
+namespace Boussole.Web.Controllers.LSO.Structure.Requests;
 
 public class AddSquadMemberRequest
 {

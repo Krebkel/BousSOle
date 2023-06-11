@@ -1,17 +1,15 @@
-using Boussole.LSO.Contracts.Structure;
+using Boussole.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Boussole.Data.Configurations;
 
-internal class SquadMemberConfiguration : IEntityTypeConfiguration<SquadMember>
+internal class UserConfiguration : IEntityTypeConfiguration<User>
 {
-    public void Configure(EntityTypeBuilder<SquadMember> builder)
+    public void Configure(EntityTypeBuilder<User> builder)
     {
         const string personColumnName = "PersonInn";
         
-        builder.Property(s => s.MemberRank).HasConversion<string>();
-        builder.HasOne(s => s.Squad).WithMany().IsRequired();
         builder.HasOne(s => s.Person).WithMany().HasForeignKey(personColumnName).IsRequired();
         builder.HasKey(personColumnName);
     }

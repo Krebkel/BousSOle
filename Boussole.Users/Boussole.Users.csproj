@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Boussole.Persons\Boussole.Persons.csproj" />
+    </ItemGroup>
+
 </Project>

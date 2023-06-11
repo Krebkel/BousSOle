@@ -1,10 +1,12 @@
-using Boussole.Core.Controllers.LSO.SSO.Requests;
-using Boussole.Core.Extensions;
 using Boussole.LSO.Services.SSO;
+using Boussole.Web.Controllers.LSO.SSO.Requests;
+using Boussole.Web.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boussole.Core.Controllers.LSO.SSO;
+namespace Boussole.Web.Controllers.LSO.SSO;
 
+[Authorize]
 [ApiController]
 [Route("api/elementnorms")]
 public class ElementNormController : ControllerBase

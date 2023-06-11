@@ -7,9 +7,6 @@ namespace Boussole.Data.Configurations;
 
 internal class SquadConfiguration : IEntityTypeConfiguration<Squad>
 {
-    /// <summary>
-    /// Занесение экземпляра класса Squad в таблицу Squads с первичным ключом Id
-    /// </summary>
     public void Configure(EntityTypeBuilder<Squad> builder)
     {
         builder.HasKey(s => s.Name);

@@ -1,4 +1,4 @@
-namespace Boussole.Core.Controllers.Persons.Requests;
+namespace Boussole.Web.Controllers.Persons.Requests;
 
 public class UpdatePersonApiRequest
 {

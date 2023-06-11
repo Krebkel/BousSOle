@@ -1,8 +1,7 @@
-using Boussole.Core.Controllers.LSO.SSO.Requests;
 using Boussole.LSO.Contracts.SSO;
-using Boussole.LSO.Contracts.Structure;
+using Boussole.Web.Controllers.LSO.SSO.Requests;
 
-namespace Boussole.Core.Extensions;
+namespace Boussole.Web.Extensions;
 
 internal static class FactWorkExtension
 {

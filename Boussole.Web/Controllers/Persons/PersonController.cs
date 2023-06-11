@@ -1,9 +1,11 @@
-using Boussole.Core.Controllers.Persons.Requests;
 using Boussole.Persons;
+using Boussole.Web.Controllers.Persons.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boussole.Core.Controllers.Persons;
+namespace Boussole.Web.Controllers.Persons;
 
+[Authorize]
 [ApiController]
 [Route("api/persons")]
 public class PersonController : ControllerBase

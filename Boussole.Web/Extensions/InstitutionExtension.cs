@@ -1,7 +1,7 @@
-using Boussole.Core.Controllers.Institutions.Requests;
 using Boussole.Institutions.Contracts;
+using Boussole.Web.Controllers.Institutions.Requests;
 
-namespace Boussole.Core.Extensions;
+namespace Boussole.Web.Extensions;
 
 internal static class InstitutionMappingExtensions
 {

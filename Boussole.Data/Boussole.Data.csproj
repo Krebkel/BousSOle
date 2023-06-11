@@ -19,10 +19,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Boussole.DataContracts\Boussole.DataContracts.csproj" />
       <ProjectReference Include="..\Boussole.LSO\Boussole.LSO.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Migrations\" />
+      <ProjectReference Include="..\Boussole.Users\Boussole.Users.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,10 +1,12 @@
-using Boussole.Core.Controllers.Institutions.Requests;
-using Boussole.Core.Extensions;
 using Boussole.Institutions.Services;
+using Boussole.Web.Controllers.Institutions.Requests;
+using Boussole.Web.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boussole.Core.Controllers.Institutions;
+namespace Boussole.Web.Controllers.Institutions;
 
+[Authorize]
 [ApiController]
 [Route("api/institutions")]
 public class InstitutionController : ControllerBase

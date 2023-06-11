@@ -1,7 +1,7 @@
-using Boussole.Core.Controllers.Persons.Requests;
 using Boussole.Persons;
+using Boussole.Web.Controllers.Persons.Requests;
 
-namespace Boussole.Core.Controllers.Persons;
+namespace Boussole.Web.Controllers.Persons;
 
 internal static class PersonMappingExtensions
 {
