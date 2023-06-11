@@ -37,6 +37,9 @@ internal class PersonService : IPersonService
     
     public async Task<Person[]> SearchPerson(SearchPersonRequest request)
     {
+        var query = _personRepository.GetAll();
+        
+        
         return Array.Empty<Person>();
     }
 }

@@ -14,7 +14,7 @@ internal static class ElementNormExtension
             NormName = request.NormName,
             MeasurementUnit = request.MeasurementUnit,
             BaseNorm = request.BaseNorm,
-            NormType = request.NormType,
+            NormTypeByDistance = request.NormTypeByDistance,
             DistanceNorm = request.DistanceNorm
         };
     }
@@ -26,7 +26,7 @@ internal static class ElementNormExtension
         existingElementNorm.NormName = request.NormName;
         existingElementNorm.MeasurementUnit = request.MeasurementUnit;
         existingElementNorm.BaseNorm = request.BaseNorm;
-        existingElementNorm.NormType = request.NormType;
+        existingElementNorm.NormTypeByDistance = request.NormTypeByDistance;
         existingElementNorm.DistanceNorm = request.DistanceNorm;
 
         return existingElementNorm;

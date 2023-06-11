@@ -11,9 +11,20 @@ internal class FactWorkConfiguration : IEntityTypeConfiguration<FactWork>
     /// </summary>
     public void Configure(EntityTypeBuilder<FactWork> builder)
     {
-        builder.HasKey(f => f.Id);
-
-        builder.HasOne(f => f.Squad).WithMany().IsRequired();
-        builder.HasOne(f => f.ElementNorm).WithMany().IsRequired();
+        const string squadColumnName = "SquadName";
+        const string normCollectionColumnName = "NormCollection";
+        const string normCodeColumnName = "NormCode";
+        
+        builder.HasOne(f => f.Squad)
+            .WithMany()
+            .HasForeignKey(squadColumnName)
+            .IsRequired();
+       
+        builder.HasOne(f => f.ElementNorm)
+            .WithMany()
+            .HasForeignKey(normCollectionColumnName, normCodeColumnName)
+            .IsRequired();
+        
+        builder.HasKey("Date", squadColumnName, normCollectionColumnName, normCodeColumnName);
     }
 }

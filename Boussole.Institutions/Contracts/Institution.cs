@@ -6,19 +6,14 @@ namespace Boussole.Institutions.Contracts;
 public class Institution
 {
     /// <summary>
-    /// UID учебного заведения
+    /// Полное название  (Федеральное государственное....)
     /// </summary>
-    public int Id { get;set; }
-    
+    public required string FullName { get; set; }
+
     /// <summary>
     /// Краткое название (ФГБОУ ВО МГТУ "СТАНКИН")
     /// </summary>
-    public string ShortName { get; set; } = null!;
-
-    /// <summary>
-    /// Полное название  (Федеральное государственное....)
-    /// </summary>
-    public string FullName { get; set; } = null!;
+    public required string ShortName { get; set; }
 
     /// <summary>
     /// Должность руководителя (Ректор)

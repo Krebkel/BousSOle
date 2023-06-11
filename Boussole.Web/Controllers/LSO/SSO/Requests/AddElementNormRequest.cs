@@ -17,7 +17,7 @@ public class AddElementNormRequest
     
     public float BaseNorm { get; set; }
     
-    public NormType NormType { get; set; }
+    public NormTypeByDistance NormTypeByDistance { get; set; }
     
     public float? DistanceNorm { get; set; }
 }

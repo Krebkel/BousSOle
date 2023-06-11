@@ -35,7 +35,7 @@ public class PlanWorkController : ControllerBase
                 createdPlanWork.Date, createdPlanWork.WorkerActivityStatus);
 
             // Возвращение результата
-            return Ok(new { PlanWorkId = createdPlanWork.Id });
+            return Ok();
         }
         catch (Exception ex)
         {

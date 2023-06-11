@@ -12,9 +12,7 @@ internal class ElementNormConfiguration : IEntityTypeConfiguration<ElementNorm>
     /// </summary>
     public void Configure(EntityTypeBuilder<ElementNorm> builder)
     {
-        builder.HasKey(entity => entity.Id);
-        
-        builder.Property(r => r.NormType)
-            .HasConversion(new EnumToStringConverter<NormType>());
+        builder.HasKey(e => new { e.NormCollection, e.NormCode });
+        builder.Property(e => e.NormTypeByDistance).HasConversion<string>();
     }
 }

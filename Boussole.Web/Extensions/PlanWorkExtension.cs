@@ -10,9 +10,9 @@ internal static class PlanWorkExtension
         return new PlanWork
         {
             Date = request.Date,
-            SquadMemberId = request.SquadMemberId,
             WorkerActivityStatus = request.WorkerActivityStatus,
-            WorkHours = request.WorkHours
+            WorkHours = request.WorkHours,
+            SquadMember = null
         };
     }
 

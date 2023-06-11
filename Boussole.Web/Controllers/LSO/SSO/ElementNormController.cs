@@ -35,7 +35,7 @@ public class ElementNormController : ControllerBase
                 createdElementNorm.NormCollection, createdElementNorm.NormCode, createdElementNorm.NormName);
 
             // Возвращение результата
-            return Ok(new { ElementNormId = createdElementNorm.Id });
+            return Ok();
         }
         catch (Exception ex)
         {

@@ -35,7 +35,7 @@ public class FactWorkController : ControllerBase
                 createdFactWork.Date, createdFactWork.WorkName);
 
             // Возвращение результата
-            return Ok(new { FactWorkId = createdFactWork.Id });
+            return Ok();
         }
         catch (Exception ex)
         {

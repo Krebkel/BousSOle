@@ -11,6 +11,6 @@ internal class InstitutionConfiguration : IEntityTypeConfiguration<Institution>
     /// </summary>
     public void Configure(EntityTypeBuilder<Institution> builder)
     {
-        builder.HasKey(entity => entity.Id);
+        builder.HasKey(entity => entity.FullName);
     }
 }

@@ -8,14 +8,9 @@ namespace Boussole.LSO.Contracts.Structure;
 public class SquadMember
 {
     /// <summary>
-    /// Id бойца
-    /// </summary>
-    public int Id { get; set; }
-    
-    /// <summary>
     /// Физическое лицо
     /// </summary>
-    public Person Person { get; set; } = null!;
+    public required Person Person { get; set; }
     
     /// <summary>
     /// Должность в отряде
@@ -35,5 +30,5 @@ public class SquadMember
     /// <summary>
     /// Отряд
     /// </summary>
-    public Squad Squad { get; set; }
+    public required Squad Squad { get; set; }
 }
