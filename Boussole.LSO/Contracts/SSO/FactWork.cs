@@ -8,39 +8,24 @@ namespace Boussole.LSO.Contracts.SSO;
 public class FactWork
 {
     /// <summary>
-    /// UID работы
-    /// </summary>
-    public int Id { get; set; }
-    
-    /// <summary>
     /// Дата выполнения работы
     /// </summary>
     public DateTimeOffset Date { get; set; }
 
     /// <summary>
-    /// UID отряда, выполнившего работу
-    /// </summary>
-    public int SquadId { get; set; }
-
-    /// <summary>
     /// Отряд, выполнивший работу
     /// </summary>
-    public Squad Squad { get; set; } = null!;
+    public required Squad Squad { get; set; }
 
     /// <summary>
     /// Наименование работы с уточнениями, заполняется отрядом
     /// </summary>
-    public string WorkName { get; set; } = null!;
-
-    /// <summary>
-    /// UID вида работ
-    /// </summary>
-    public int ElementNormId { get; set; }
-
+    public required string WorkName { get; set; }
+    
     /// <summary>
     /// Вид работы
     /// </summary>
-    public ElementNorm ElementNorm { get; set; } = null!;
+    public required ElementNorm ElementNorm { get; set; }
 
     /// <summary>
     /// Если норма учитывает дистанцию, то отряд обязан указать её.

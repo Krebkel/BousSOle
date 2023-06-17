@@ -23,126 +23,24 @@ namespace Boussole.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.ElementNorm", b =>
+            modelBuilder.Entity("Boussole.Institutions.Contracts.Institution", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<float>("BaseNorm")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("DistanceNorm")
-                        .HasColumnType("real");
-
-                    b.Property<string>("MeasurementUnit")
-                        .IsRequired()
+                    b.Property<string>("FullName")
                         .HasColumnType("text");
-
-                    b.Property<string>("NormCode")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormCollection")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormType")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ElementNorms", "bousSOle");
-                });
-
-            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTimeOffset>("Date")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int?>("Distance")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ElementNormId")
-                        .HasColumnType("integer");
-
-                    b.Property<float>("Quantity")
-                        .HasColumnType("real");
-
-                    b.Property<int>("SquadId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("WorkName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ElementNormId");
-
-                    b.HasIndex("SquadId");
-
-                    b.ToTable("FactWorks", "bousSOle");
-                });
-
-            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.PlanWork", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTimeOffset>("Date")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("SquadMemberId")
-                        .HasColumnType("integer");
-
-                    b.Property<float>("WorkHours")
-                        .HasColumnType("real");
-
-                    b.Property<string>("WorkerActivityStatus")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SquadMemberId");
-
-                    b.ToTable("PlanWorks", "bousSOle");
-                });
-
-            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Institution", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AdministratorName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("AdministratorTitle")
+                    b.Property<string>("AdministratorPatronymic")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("AdministratorSurname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AdministratorTitle")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -154,18 +52,159 @@ namespace Boussole.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("FullName");
 
                     b.ToTable("Institutions", "bousSOle");
                 });
 
-            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Person", b =>
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.ElementNorm", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("NormCollection")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NormCode")
+                        .HasColumnType("text");
+
+                    b.Property<float>("BaseNorm")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("DistanceNorm")
+                        .HasColumnType("real");
+
+                    b.Property<string>("MeasurementUnit")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NormName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NormTypeByDistance")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("NormCollection", "NormCode");
+
+                    b.ToTable("ElementNorms", "bousSOle");
+                });
+
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>
+                {
+                    b.Property<DateTimeOffset>("Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("SquadName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NormCollection")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NormCode")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("Distance")
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    b.Property<float>("Quantity")
+                        .HasColumnType("real");
+
+                    b.Property<string>("WorkName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Date", "SquadName", "NormCollection", "NormCode");
+
+                    b.HasIndex("SquadName");
+
+                    b.HasIndex("NormCollection", "NormCode");
+
+                    b.ToTable("FactWorks", "bousSOle");
+                });
+
+            modelBuilder.Entity("Boussole.LSO.Contracts.SSO.PlanWork", b =>
+                {
+                    b.Property<DateTimeOffset>("Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("SquadMemberPersonInn")
+                        .HasColumnType("text");
+
+                    b.Property<float>("WorkHours")
+                        .HasColumnType("real");
+
+                    b.Property<string>("WorkerActivityStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Date", "SquadMemberPersonInn");
+
+                    b.HasIndex("SquadMemberPersonInn");
+
+                    b.ToTable("PlanWorks", "bousSOle");
+                });
+
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Squad", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("InstitutionFullName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SquadType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("VkUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Name");
+
+                    b.HasIndex("InstitutionFullName");
+
+                    b.ToTable("Squads", "bousSOle");
+                });
+
+            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.SquadMember", b =>
+                {
+                    b.Property<string>("PersonInn")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("MemberRank")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SquadName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("YearEnlisted")
+                        .HasColumnType("integer");
+
+                    b.HasKey("PersonInn");
+
+                    b.HasIndex("SquadName");
+
+                    b.ToTable("SquadMembers", "bousSOle");
+                });
+
+            modelBuilder.Entity("Boussole.Persons.Person", b =>
+                {
+                    b.Property<string>("PersonInn")
+                        .HasColumnType("text");
+
+                    b.Property<string>("EMail")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -183,89 +222,36 @@ namespace Boussole.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("PersonInn");
 
                     b.ToTable("Persons", "bousSOle");
                 });
 
-            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Squad", b =>
+            modelBuilder.Entity("Boussole.Users.User", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.Property<string>("PersonInn")
+                        .HasColumnType("text");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("InstitutionId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Region")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.HasKey("PersonInn");
 
-                    b.Property<string>("SquadType")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("VkUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("InstitutionId");
-
-                    b.ToTable("Squads", "bousSOle");
-                });
-
-            modelBuilder.Entity("Boussole.LSO.Contracts.Structure.SquadMember", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("MemberRank")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("SquadId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("YearEnlisted")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.HasIndex("SquadId");
-
-                    b.ToTable("SquadMembers", "bousSOle");
+                    b.ToTable("Users", "bousSOle");
                 });
 
             modelBuilder.Entity("Boussole.LSO.Contracts.SSO.FactWork", b =>
                 {
-                    b.HasOne("Boussole.LSO.Contracts.SSO.ElementNorm", "ElementNorm")
+                    b.HasOne("Boussole.LSO.Contracts.Structure.Squad", "Squad")
                         .WithMany()
-                        .HasForeignKey("ElementNormId")
+                        .HasForeignKey("SquadName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Boussole.LSO.Contracts.Structure.Squad", "Squad")
+                    b.HasOne("Boussole.LSO.Contracts.SSO.ElementNorm", "ElementNorm")
                         .WithMany()
-                        .HasForeignKey("SquadId")
+                        .HasForeignKey("NormCollection", "NormCode")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -278,7 +264,7 @@ namespace Boussole.Data.Migrations
                 {
                     b.HasOne("Boussole.LSO.Contracts.Structure.SquadMember", "SquadMember")
                         .WithMany()
-                        .HasForeignKey("SquadMemberId")
+                        .HasForeignKey("SquadMemberPersonInn")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -287,9 +273,9 @@ namespace Boussole.Data.Migrations
 
             modelBuilder.Entity("Boussole.LSO.Contracts.Structure.Squad", b =>
                 {
-                    b.HasOne("Boussole.LSO.Contracts.Structure.Institution", "Institution")
+                    b.HasOne("Boussole.Institutions.Contracts.Institution", "Institution")
                         .WithMany()
-                        .HasForeignKey("InstitutionId")
+                        .HasForeignKey("InstitutionFullName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -298,21 +284,32 @@ namespace Boussole.Data.Migrations
 
             modelBuilder.Entity("Boussole.LSO.Contracts.Structure.SquadMember", b =>
                 {
-                    b.HasOne("Boussole.LSO.Contracts.Structure.Person", "Person")
+                    b.HasOne("Boussole.Persons.Person", "Person")
                         .WithMany()
-                        .HasForeignKey("PersonId")
+                        .HasForeignKey("PersonInn")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Boussole.LSO.Contracts.Structure.Squad", "Squad")
                         .WithMany()
-                        .HasForeignKey("SquadId")
+                        .HasForeignKey("SquadName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Person");
 
                     b.Navigation("Squad");
+                });
+
+            modelBuilder.Entity("Boussole.Users.User", b =>
+                {
+                    b.HasOne("Boussole.Persons.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonInn")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
                 });
 #pragma warning restore 612, 618
         }

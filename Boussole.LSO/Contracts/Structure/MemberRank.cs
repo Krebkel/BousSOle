@@ -8,7 +8,7 @@ public enum MemberRank
     /// <summary>
     /// Командир
     /// </summary>
-    Commander,
+    Commander = 1,
     
     /// <summary>
     /// Комиссар

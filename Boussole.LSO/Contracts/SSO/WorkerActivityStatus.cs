@@ -9,7 +9,7 @@ public enum WorkerActivityStatus
     /// <summary>
     /// Работал (Р)
     /// </summary>
-    DidWork,
+    DidWork = 1,
     
     /// <summary>
     /// Выходной (В)

@@ -8,24 +8,14 @@ namespace Boussole.LSO.Contracts.SSO;
 public class PlanWork
 {
     /// <summary>
-    /// UID учетного дня
-    /// </summary>
-    public int Id { get; set; }
-    
-    /// <summary>
     /// Учётный день (11.05.2023)
     /// </summary>
     public DateTimeOffset Date { get; set; }
-    
-    /// <summary>
-    /// UID бойца
-    /// </summary>
-    public int SquadMemberId { get; set; }
-    
+
     /// <summary>
     /// Боец отряда (Иванов Иван Иванович)
     /// </summary>
-    public SquadMember SquadMember { get; set; } = null!;
+    public required SquadMember SquadMember { get; set; }
     
     /// <summary>
     /// Статус (Работал/Выходной/...)
