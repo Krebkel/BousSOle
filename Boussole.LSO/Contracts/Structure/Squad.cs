@@ -1,4 +1,4 @@
-﻿using Boussole.Institutions.Contracts;
+﻿using Boussole.Command.Contracts;
 
 namespace Boussole.LSO.Contracts.Structure;
 
@@ -13,22 +13,17 @@ public class Squad
     public required string Name { get; set; }
     
     /// <summary>
-    /// Регион, в котором находится штаб (г. Москва)
+    /// Штаб базирования
     /// </summary>
-    public required string Region { get; set; }
+    public required Shtab Shtab { get; set; }
+    
+    /// <summary>
+    /// Направление отряда
+    /// </summary>
+    public required ActivityField ActivityField { get; set; }
     
     /// <summary>
     /// Ссылка на ВК отряда (https://vk.com/ssoagon)
     /// </summary>
-    public required string VkUrl { get; set; }
-    
-    /// <summary>
-    /// UID учебного заведения
-    /// </summary>
-    public required Institution Institution { get; set; }
-
-    /// <summary>
-    /// Направление отряда
-    /// </summary>
-    public SquadType SquadType { get; set; }
+    public string? VkUrl { get; set; }
 }

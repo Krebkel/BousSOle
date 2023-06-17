@@ -1,3 +1,5 @@
+using Boussole.Command.Contracts;
+
 namespace Boussole.Institutions.Contracts;
 
 /// <summary>
@@ -14,7 +16,12 @@ public class Institution
     /// Краткое название (ФГБОУ ВО МГТУ "СТАНКИН")
     /// </summary>
     public required string ShortName { get; set; }
-
+    
+    /// <summary>
+    /// Регион учебного заведения
+    /// </summary>
+    public required Shtab Shtab { get; set; }
+    
     /// <summary>
     /// Должность руководителя (Ректор)
     /// </summary>

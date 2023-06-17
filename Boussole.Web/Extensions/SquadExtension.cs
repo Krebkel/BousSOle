@@ -10,10 +10,9 @@ internal static class SquadMappingExtensions
         var squad = new Squad
         {
             Name = request.Name,
-            Region = request.Region,
             VkUrl = request.VkUrl,
-            Institution = request.Institution,
-            SquadType = request.SquadType
+            Shtab = request.Shtab,
+            ActivityField = request.ActivityField
         };
 
         return squad;
@@ -22,10 +21,9 @@ internal static class SquadMappingExtensions
     public static Squad ToUpdateSquad(this UpdateSquadRequest request, Squad existingSquad)
     {
         existingSquad.Name = request.Name;
-        existingSquad.Region = request.Region;
+        existingSquad.Shtab = request.Shtab;
         existingSquad.VkUrl = request.VkUrl;
-        existingSquad.Institution = request.Institution;
-        existingSquad.SquadType = request.SquadType;
+        existingSquad.ActivityField = request.ActivityField;
 
         return existingSquad;
     }

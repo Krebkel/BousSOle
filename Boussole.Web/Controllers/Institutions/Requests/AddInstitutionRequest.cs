@@ -1,3 +1,6 @@
+using Boussole.Command.Contracts;
+using Boussole.Institutions.Contracts;
+
 namespace Boussole.Web.Controllers.Institutions.Requests;
 
 public class AddInstitutionRequest
@@ -9,4 +12,5 @@ public class AddInstitutionRequest
     public string AdministratorName { get; set; }
     public string AdministratorPatronymic { get; set; }
     public string StructWebsite { get; set; }
+    public Shtab Shtab { get; set; }
 }

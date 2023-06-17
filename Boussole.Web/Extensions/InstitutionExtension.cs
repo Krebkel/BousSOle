@@ -15,7 +15,8 @@ internal static class InstitutionMappingExtensions
             AdministratorSurname = request.AdministratorSurname,
             AdministratorName = request.AdministratorName,
             AdministratorPatronymic = request.AdministratorPatronymic,
-            StructWebsite = request.StructWebsite
+            StructWebsite = request.StructWebsite,
+            Shtab = request.Shtab
         };
 
         return institution;

@@ -22,6 +22,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Boussole.Data\Boussole.Data.csproj" />
+      <ProjectReference Include="..\Boussole.Project\Boussole.Project.csproj" />
+      <ProjectReference Include="..\Boussole.Command\Boussole.Command.csproj" />
     </ItemGroup>
 
 </Project>

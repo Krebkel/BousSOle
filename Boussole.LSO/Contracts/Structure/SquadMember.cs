@@ -23,7 +23,7 @@ public class SquadMember
     public int YearEnlisted { get; set; }
     
     /// <summary>
-    /// Участие в действующем составе
+    /// Продлено ли членство
     /// </summary>
     public bool IsActive { get; set; }
 

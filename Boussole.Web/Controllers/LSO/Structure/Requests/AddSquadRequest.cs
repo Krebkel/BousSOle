@@ -1,4 +1,4 @@
-using Boussole.Institutions.Contracts;
+using Boussole.Command.Contracts;
 using Boussole.LSO.Contracts.Structure;
 
 namespace Boussole.Web.Controllers.LSO.Structure.Requests;
@@ -13,7 +13,7 @@ public class AddSquadRequest
     
     public string VkUrl { get; set; }
     
-    public Institution Institution { get; set; }
+    public Shtab Shtab { get; set; }
     
-    public SquadType SquadType { get; set; }
+    public ActivityField ActivityField { get; set; }
 }

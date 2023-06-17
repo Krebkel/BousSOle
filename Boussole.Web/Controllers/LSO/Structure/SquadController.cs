@@ -33,7 +33,7 @@ public class SquadController : ControllerBase
             // Создание отряда
             var createdSquad = await _squadService.CreateSquadAsync(squad);
 
-            _logger.LogInformation("Отряд успешно добавлен: {@Name} {@Region}", createdSquad.Name, createdSquad.Region);
+            _logger.LogInformation("Отряд успешно добавлен: {@Name} {@Region}", createdSquad.Name, createdSquad.Shtab.Region);
 
             // Возвращение результата
             return Ok();
@@ -67,7 +67,7 @@ public class SquadController : ControllerBase
             // Обновление отряда
             await _squadService.UpdateSquadAsync(updatedSquad);
 
-            _logger.LogInformation("Отряд успешно обновлен: {@Name} {@Region}", updatedSquad.Name, updatedSquad.Region);
+            _logger.LogInformation("Отряд успешно обновлен: {@Name} {@Region}", updatedSquad.Name, updatedSquad.Shtab.Region);
 
             // Возвращение результата
             return Ok();
