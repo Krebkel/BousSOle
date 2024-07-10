@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  letsencrypt:
+    image: medveden91.ddns.net/boussole/dependency_proxy/containers/certbot/certbot:latest
+    ports:
+      - "443:443"
+      - "8080:8080"
+      - "80:80"
+    command: sh -c "certbot certonly --standalone -d boussole.ru --text --agree-tos --email medvedev.denius@gmail.com --server https://acme-v02.api.letsencrypt.org/directory --rsa-key-size 4096 --verbose --keep-until-expiring --preferred-challenges=http"
+    entrypoint: ""
+    volumes:
+      - letsencrypt_keys:/etc/letsencrypt
+    environment:
+      - TERM=xterm
+
+volumes:
+  letsencrypt_keys:
+    external: true

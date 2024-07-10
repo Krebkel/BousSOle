@@ -1,0 +1,21 @@
+version: "3"
+services:
+  boussole:
+    image: medveden91.ddns.net:5050/boussole/backend:latest # чтобы это сработало, сначала нужно на вызывающем хосте вбить docker login medveden91.ddns.net:5050
+    ports:
+      - "443:443"
+    environment:
+      - Jwt:Key=$JWTKEY
+      - Postgres:ConnectionString="Host=postgres;Port=5432;Database=postgres;Username=Den;Password=$POSTGRESPASSWORD;Pooling=true;Maximum Pool Size=100"
+      - ASPNETCORE_ENVIRONMENT=$ENVIRONMENT
+    volumes:
+      - letsencrypt_keys:/etc/letsencrypt
+    healthcheck:
+      test: curl --fail https://boussole.ru/healthcheck || exit 1
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  letsencrypt_keys:
+    external: true
